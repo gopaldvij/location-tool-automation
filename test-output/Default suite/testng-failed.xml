@@ -5,20 +5,10 @@
     <classes>
       <class name="e2eTest.LoginTest">
         <methods>
+          <include name="launchApplication"/>
           <include name="TR_64"/>
           <include name="openWebsite"/>
           <include name="tearDown"/>
-          <include name="TR_62"/>
-          <include name="TR_63"/>
-          <include name="TR_60"/>
-          <include name="TR_61"/>
-          <include name="TR_66"/>
-          <include name="TR_67"/>
-          <include name="launchApplication"/>
-          <include name="TR_65"/>
-          <include name="TR_59"/>
-          <include name="TR_57"/>
-          <include name="TR_58"/>
         </methods>
       </class> <!-- e2eTest.LoginTest -->
     </classes>

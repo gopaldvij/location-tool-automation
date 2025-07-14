@@ -53,7 +53,7 @@ public class RegisterTest extends BaseTest {
 	@Test(description = "Make sure that locating popup should be open if user click on the locate button after the adding valid phone number.")
 	public void TR_33() throws InterruptedException {
 		landingpage.enterMobileNumber("1234567890");
-		landingpage.waitForWebElementToAppear(landingpage.emailField);
+		landingpage.waitForWebElementToAppear(landingpage.emailFieldRegister);
 		WebElement locatingPopup = driver.findElement(By.xpath("//div[@role='dialog']"));
 		Assert.assertTrue(locatingPopup.isDisplayed(), "locating popup does not arrvies");
 	}
@@ -72,7 +72,7 @@ public class RegisterTest extends BaseTest {
 	@Test(description = "Verify that 'Create Account' title should be visible on the locating popup.")
 	public void TR_35() throws InterruptedException {
 		landingpage.enterMobileNumber("+91 1234567890");
-		landingpage.waitForWebElementToAppear(landingpage.emailField);
+		landingpage.waitForWebElementToAppear(landingpage.emailFieldRegister);
 		Assert.assertEquals(driver.findElement(By.cssSelector(".body-modal-ceate-account")).getText(),
 				"Create Account");
 	}
@@ -81,7 +81,7 @@ public class RegisterTest extends BaseTest {
 	public void TR_36() throws InterruptedException {
 		SoftAssert softAssert = new SoftAssert();
 		landingpage.enterMobileNumber("+91 1234567890");
-		landingpage.waitForWebElementToAppear(landingpage.emailField);
+		landingpage.waitForWebElementToAppear(landingpage.emailFieldRegister);
 
 		softAssert.assertEquals(locatingPopup.continueWithGoogle.getText(), "Continue with Google");
 		softAssert.assertEquals(locatingPopup.continueWithFb.getText(), "Continue with Facebook");
@@ -95,11 +95,11 @@ public class RegisterTest extends BaseTest {
 	public void TR_37() throws InterruptedException {
 		SoftAssert softAssert = new SoftAssert();
 		landingpage.enterMobileNumber("+91 1234567890");
-		landingpage.waitForWebElementToAppear(landingpage.emailField);
+		landingpage.waitForWebElementToAppear(landingpage.emailFieldRegister);
 		Thread.sleep(2000);
 		softAssert.assertTrue(landingpage.continueBtn.isEnabled(), "Continue Button is not visible");
 		softAssert.assertEquals(landingpage.continueBtn.getText(), "Continue");
-		softAssert.assertTrue(landingpage.emailField.isEnabled(), "Email field is not visible");
+		softAssert.assertTrue(landingpage.emailFieldRegister.isEnabled(), "Email field is not visible");
 		softAssert.assertAll();
 	}
 
@@ -107,7 +107,7 @@ public class RegisterTest extends BaseTest {
 	public void TR_38() throws InterruptedException {
 		SoftAssert softAssert = new SoftAssert();
 		landingpage.enterMobileNumber("+91 1234567890");
-		landingpage.waitForWebElementToAppear(landingpage.emailField);
+		landingpage.waitForWebElementToAppear(landingpage.emailFieldRegister);
 		softAssert.assertEquals(locatingPopup.termsConditionSingupPopup.getText(), "Terms and Conditions");
 		locatingPopup.termsConditionSingupPopup.click();
 
@@ -124,20 +124,20 @@ public class RegisterTest extends BaseTest {
 	}
 
 	@Test(description = "Verify that invalid emails should not work.")
-	public void TR_39() {
+	public void TR_39() throws InterruptedException {
 		SoftAssert softAssert = new SoftAssert();
 		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+		landingpage.enterMobileNumber("+91 1234567890");
 
 		// Use an enhanced for loop for readability
 		for (String invalidEmail : invalidEmails) {
-			driver.get("https://stage.location-tool.com/en/sign-up?D=91&n=1234567890");
-
+//			driver.get("https://stage.location-tool.com/en");
 			// Wait until the email field is visible
-			wait.until(ExpectedConditions.visibilityOf(landingpage.emailField));
+			wait.until(ExpectedConditions.visibilityOf(landingpage.emailFieldRegister));
 
 			// Clear any pre-filled content before entering invalid email
-			landingpage.emailField.clear();
-			landingpage.emailField.sendKeys(invalidEmail);
+			landingpage.emailFieldRegister.clear();
+			landingpage.emailFieldRegister.sendKeys(invalidEmail);
 
 			// Click the continue button
 			landingpage.continueBtn.click();
@@ -162,8 +162,8 @@ public class RegisterTest extends BaseTest {
 		for (int i = 0; i < validEmails.length; i++) {
 			try {
 				driver.get("https://stage.location-tool.com/en/sign-up?D=91&n=1234567890");
-				landingpage.waitForWebElementToAppear(landingpage.emailField);
-				landingpage.emailField.sendKeys(validEmails[i]);
+				landingpage.waitForWebElementToAppear(landingpage.emailFieldRegister);
+				landingpage.emailFieldRegister.sendKeys(validEmails[i]);
 				Thread.sleep(2000);
 				landingpage.continueBtn.click();
 				Thread.sleep(5000);
@@ -180,8 +180,8 @@ public class RegisterTest extends BaseTest {
 	@Test(description = "Verify that Checkout popup should be arrives when i click on continue after entering valid email")
 	public void TR_41() throws InterruptedException {
 		landingpage.enterMobileNumber("+91 1234567890");
-		landingpage.waitForWebElementToAppear(landingpage.emailField);
-		landingpage.emailField.sendKeys(common.randomEmail());
+		landingpage.waitForWebElementToAppear(landingpage.emailFieldRegister);
+		landingpage.emailFieldRegister.sendKeys(common.randomEmail());
 		landingpage.continueBtn.click();
 		Thread.sleep(2000);
 		Assert.assertTrue(landingpage.spreedlyCardSubmitBtn.isDisplayed(), "Checkout popup is not visible");
@@ -190,8 +190,8 @@ public class RegisterTest extends BaseTest {
 	@Test(description = "Verify that amount of payment should be visible on the checkout popup.")
 	public void TR_42() throws InterruptedException {
 		landingpage.enterMobileNumber("+91 1234567890");
-		landingpage.waitForWebElementToAppear(landingpage.emailField);
-		landingpage.emailField.sendKeys("auto12607@gmail.com");
+		landingpage.waitForWebElementToAppear(landingpage.emailFieldRegister);
+		landingpage.emailFieldRegister.sendKeys("auto12607@gmail.com");
 		landingpage.continueBtn.click();
 		Thread.sleep(2000);
 		String actualTrialFee = landingpage.actualTrialAmountElement.getText();
@@ -202,8 +202,8 @@ public class RegisterTest extends BaseTest {
 	public void TR_43() throws InterruptedException {
 		SoftAssert softAssert = new SoftAssert();
 		landingpage.enterMobileNumber("+91 1234567890");
-		landingpage.waitForWebElementToAppear(landingpage.emailField);
-		landingpage.emailField.sendKeys("b2auto2607@gmail.com");
+		landingpage.waitForWebElementToAppear(landingpage.emailFieldRegister);
+		landingpage.emailFieldRegister.sendKeys("b2auto2607@gmail.com");
 		landingpage.continueBtn.click();
 		Thread.sleep(2000);
 
@@ -223,8 +223,8 @@ public class RegisterTest extends BaseTest {
 		SoftAssert softAssert = new SoftAssert();
 		try {
 			landingpage.enterMobileNumber("+91 1234567890");
-			landingpage.waitForWebElementToAppear(landingpage.emailField);
-			landingpage.emailField.sendKeys(common.randomEmail());
+			landingpage.waitForWebElementToAppear(landingpage.emailFieldRegister);
+			landingpage.emailFieldRegister.sendKeys(common.randomEmail());
 			landingpage.continueBtn.click();
 			Thread.sleep(2000);
 
@@ -250,8 +250,8 @@ public class RegisterTest extends BaseTest {
 		try {
 			Thread.sleep(3000);
 			landingpage.enterMobileNumber("+91 1234567890");
-			landingpage.waitForWebElementToAppear(landingpage.emailField);
-			landingpage.emailField.sendKeys(common.randomEmail());
+			landingpage.waitForWebElementToAppear(landingpage.emailFieldRegister);
+			landingpage.emailFieldRegister.sendKeys(common.randomEmail());
 			landingpage.continueBtn.click();
 			Thread.sleep(2000);
 
@@ -281,8 +281,8 @@ public class RegisterTest extends BaseTest {
 		try {
 			Thread.sleep(3000);
 			landingpage.enterMobileNumber("+91 1234567890");
-			landingpage.waitForWebElementToAppear(landingpage.emailField);
-			landingpage.emailField.sendKeys(common.randomEmail());
+			landingpage.waitForWebElementToAppear(landingpage.emailFieldRegister);
+			landingpage.emailFieldRegister.sendKeys(common.randomEmail());
 			landingpage.continueBtn.click();
 			Thread.sleep(2000);
 
@@ -313,8 +313,8 @@ public class RegisterTest extends BaseTest {
 		try {
 			Thread.sleep(3000);
 			landingpage.enterMobileNumber("+91 1234567890");
-			landingpage.waitForWebElementToAppear(landingpage.emailField);
-			landingpage.emailField.sendKeys(common.randomEmail());
+			landingpage.waitForWebElementToAppear(landingpage.emailFieldRegister);
+			landingpage.emailFieldRegister.sendKeys(common.randomEmail());
 			landingpage.continueBtn.click();
 			Thread.sleep(2000);
 
@@ -347,8 +347,8 @@ public class RegisterTest extends BaseTest {
 		SoftAssert softAssert = new SoftAssert();
 		try {
 			landingpage.enterMobileNumber("+91 1234567890");
-			landingpage.waitForWebElementToAppear(landingpage.emailField);
-			landingpage.emailField.sendKeys(common.randomEmail());
+			landingpage.waitForWebElementToAppear(landingpage.emailFieldRegister);
+			landingpage.emailFieldRegister.sendKeys(common.randomEmail());
 			landingpage.continueBtn.click();
 			Thread.sleep(2000);
 
@@ -380,8 +380,8 @@ public class RegisterTest extends BaseTest {
 		SoftAssert softAssert = new SoftAssert();
 		try {
 			landingpage.enterMobileNumber("+91 1234567890");
-			landingpage.waitForWebElementToAppear(landingpage.emailField);
-			landingpage.emailField.sendKeys(common.randomEmail());
+			landingpage.waitForWebElementToAppear(landingpage.emailFieldRegister);
+			landingpage.emailFieldRegister.sendKeys(common.randomEmail());
 			landingpage.continueBtn.click();
 			Thread.sleep(2000);
 
@@ -418,8 +418,8 @@ public class RegisterTest extends BaseTest {
 		SoftAssert softAssert = new SoftAssert();
 		try {
 			landingpage.enterMobileNumber("+91 1234567890");
-			landingpage.waitForWebElementToAppear(landingpage.emailField);
-			landingpage.emailField.sendKeys(common.randomEmail());
+			landingpage.waitForWebElementToAppear(landingpage.emailFieldRegister);
+			landingpage.emailFieldRegister.sendKeys(common.randomEmail());
 			landingpage.continueBtn.click();
 			Thread.sleep(2000);
 
@@ -445,8 +445,8 @@ public class RegisterTest extends BaseTest {
 		SoftAssert softAssert = new SoftAssert();
 		try {
 			landingpage.enterMobileNumber("+91 1234567890");
-			landingpage.waitForWebElementToAppear(landingpage.emailField);
-			landingpage.emailField.sendKeys(common.randomEmail());
+			landingpage.waitForWebElementToAppear(landingpage.emailFieldRegister);
+			landingpage.emailFieldRegister.sendKeys(common.randomEmail());
 			landingpage.continueBtn.click();
 			Thread.sleep(2000);
 
@@ -479,8 +479,8 @@ public class RegisterTest extends BaseTest {
 		SoftAssert softAssert = new SoftAssert();
 		try {
 			landingpage.enterMobileNumber("+91 1234567890");
-			landingpage.waitForWebElementToAppear(landingpage.emailField);
-			landingpage.emailField.sendKeys(common.randomEmail());
+			landingpage.waitForWebElementToAppear(landingpage.emailFieldRegister);
+			landingpage.emailFieldRegister.sendKeys(common.randomEmail());
 			landingpage.continueBtn.click();
 			Thread.sleep(2000);
 
@@ -522,8 +522,8 @@ public class RegisterTest extends BaseTest {
 		SoftAssert softAssert = new SoftAssert();
 		try {
 			landingpage.enterMobileNumber("+91 1234567890");
-			landingpage.waitForWebElementToAppear(landingpage.emailField);
-			landingpage.emailField.sendKeys(common.randomEmail());
+			landingpage.waitForWebElementToAppear(landingpage.emailFieldRegister);
+			landingpage.emailFieldRegister.sendKeys(common.randomEmail());
 			landingpage.continueBtn.click();
 			Thread.sleep(2000);
 

@@ -198,8 +198,8 @@ public class AccountTest extends BaseTest {
 		SoftAssert softAssert = new SoftAssert();
 		try {
 			landingpage.enterMobileNumber("+91 1234567890");
-			landingpage.waitForWebElementToAppear(landingpage.emailField);
-			landingpage.emailField.sendKeys(common.randomEmail());
+			landingpage.waitForWebElementToAppear(landingpage.emailFieldRegister);
+			landingpage.emailFieldRegister.sendKeys(common.randomEmail());
 			landingpage.continueBtn.click();
 			Thread.sleep(2000);
 
@@ -226,9 +226,9 @@ public class AccountTest extends BaseTest {
 		SoftAssert softAssert = new SoftAssert();
 		try {
 			landingpage.enterMobileNumber("+91 1234567890");
-			landingpage.waitForWebElementToAppear(landingpage.emailField);
+			landingpage.waitForWebElementToAppear(landingpage.emailFieldRegister);
 			final String email = common.randomEmail();
-			landingpage.emailField.sendKeys(email);
+			landingpage.emailFieldRegister.sendKeys(email);
 			landingpage.continueBtn.click();
 			Thread.sleep(2000);
 
@@ -272,9 +272,9 @@ public class AccountTest extends BaseTest {
 		SoftAssert softAssert = new SoftAssert();
 		try {
 			landingpage.enterMobileNumber("+91 1234567890");
-			landingpage.waitForWebElementToAppear(landingpage.emailField);
+			landingpage.waitForWebElementToAppear(landingpage.emailFieldRegister);
 			final String email = common.randomEmail();
-			landingpage.emailField.sendKeys(email);
+			landingpage.emailFieldRegister.sendKeys(email);
 			landingpage.continueBtn.click();
 			Thread.sleep(2000);
 
@@ -300,8 +300,8 @@ public class AccountTest extends BaseTest {
 			dashboard.cancelSubscription();
 
 			landingpage.enterMobileNumber("+91 1234567890");
-			landingpage.waitForWebElementToAppear(landingpage.emailField);
-			landingpage.emailField.sendKeys(email);
+			landingpage.waitForWebElementToAppear(landingpage.emailFieldRegister);
+			landingpage.emailFieldRegister.sendKeys(email);
 			landingpage.continueBtn.click();
 			Thread.sleep(2000);
 

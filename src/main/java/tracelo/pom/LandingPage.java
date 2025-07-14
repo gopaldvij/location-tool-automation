@@ -133,10 +133,13 @@ public class LandingPage extends AbstractComponent {
 	@FindBy(css = ".invelid-number-error")
 	public WebElement invalidNumberError;
 
-	@FindBy(xpath = "//input[@name='email']")
-	public WebElement emailField;
+	@FindBy(id = "email")
+	public WebElement emailFieldLogin;
 
-	@FindBy(xpath = "//button[text()='Continue'][2]")
+	@FindBy(xpath = "//input[@aria-label='Email']")
+	public WebElement emailFieldRegister;	
+	
+	@FindBy(xpath = "//div[@class='submit-btn-modal']")
 	public WebElement continueBtn;
 
 	@FindBy(xpath="//iframe[starts-with(@id,'spreedly-number-frame')]")
@@ -352,8 +355,8 @@ public class LandingPage extends AbstractComponent {
 
 	public void login(String email, String password) throws InterruptedException {
 		loginBtn.click();
-		waitForWebElementToAppear(emailField);
-		emailField.sendKeys(email);
+		waitForWebElementToAppear(emailFieldLogin);
+		emailFieldLogin.sendKeys(email);
 		passwordField.sendKeys(password);
 		loginContinueBtn.click();
 		Thread.sleep(5000);
@@ -361,8 +364,8 @@ public class LandingPage extends AbstractComponent {
 
 	public void loginDash(String email, String password) throws InterruptedException {
 		loginBtn.click();
-		waitForWebElementToAppear(emailField);
-		emailField.sendKeys(email);
+		waitForWebElementToAppear(emailFieldLogin);
+		emailFieldLogin.sendKeys(email);
 		passwordField.sendKeys(password);
 		loginContinueBtn.click();
 		Thread.sleep(3000);
@@ -440,10 +443,10 @@ public class LandingPage extends AbstractComponent {
 
 	public void resetPassword(String email) throws InterruptedException {
 		loginBtn.click();
-		waitForWebElementToAppear(emailField);
+		waitForWebElementToAppear(emailFieldLogin);
 		forgotPassword.click();
 		waitForWebElementToAppear(headerResetPass);
-		emailField.sendKeys(email);
+		emailFieldLogin.sendKeys(email);
 		setNewPassBtn.click();
 		Thread.sleep(2000);
 	}

@@ -26,7 +26,7 @@ public class LoginTest extends BaseTest {
 	public void TR_55() {
 		SoftAssert softAssert = new SoftAssert();
 		landingpage.loginBtn.click();
-		landingpage.waitForWebElementToAppear(landingpage.emailField);
+		landingpage.waitForWebElementToAppear(landingpage.emailFieldLogin);
 		softAssert.assertEquals(locatingPopup.continueWithGoogle.getText(), "Continue with Google");
 		softAssert.assertEquals(locatingPopup.continueWithFb.getText(), "Continue with Facebook");
 		softAssert.assertTrue(locatingPopup.continueWithGoogle.isEnabled(),
@@ -39,10 +39,8 @@ public class LoginTest extends BaseTest {
 	public void TR_56() throws InterruptedException {
 		SoftAssert softAssert = new SoftAssert();
 		landingpage.loginDash("", "");
-		String emailError = driver.findElement(By.xpath("//div[normalize-space(text())='Please Enter Email']"))
-				.getText();
-		String passError = driver.findElement(By.xpath("//div[normalize-space(text())='Password Is Required']"))
-				.getText();
+		String emailError = driver.findElement(By.id("email_help")).getText();
+		String passError = driver.findElement(By.id("password_help")).getText();
 
 		softAssert.assertEquals(emailError, "Please Enter Email");
 		softAssert.assertEquals(passError, "Password Is Required");
@@ -52,9 +50,9 @@ public class LoginTest extends BaseTest {
 	@Test(description = "Verify with the valid email and invalid password.")
 	public void TR_57() throws InterruptedException {
 		SoftAssert softAssert = new SoftAssert();
-		landingpage.login("smoke2@yopmail.com", "Password@123");
+		landingpage.login("smoke22@yopmail.com", "Password@123");
 		String errorEmail = driver
-				.findElement(By.xpath("//p[normalize-space(text())='Email and password do not match.']")).getText();
+				.findElement(By.xpath("//div[@aria-label='Email']/following::p[1]")).getText();
 		softAssert.assertEquals(errorEmail, "Email and password do not match.");
 		softAssert.assertAll();
 	}
@@ -62,9 +60,9 @@ public class LoginTest extends BaseTest {
 	@Test(description = "Verify with the invalid email and valid password.")
 	public void TR_58() throws InterruptedException {
 		SoftAssert softAssert = new SoftAssert();
-		landingpage.login("seleniu12@yopmail.com", "djg8Ut");
+		landingpage.login("seleniu12@yopmail.com", "L4Mi1G");
 		String errorEmail = driver
-				.findElement(By.xpath("//p[normalize-space(text())='There is no account associated with this email.']"))
+				.findElement(By.xpath("//div[@aria-label='Email']/following::p[1]"))
 				.getText();
 		softAssert.assertEquals(errorEmail, "There is no account associated with this email.");
 		softAssert.assertAll();
@@ -85,9 +83,9 @@ public class LoginTest extends BaseTest {
 	public void TR_60() throws InterruptedException {
 		SoftAssert softAssert = new SoftAssert();
 		landingpage.loginBtn.click();
-		landingpage.waitForWebElementToAppear(landingpage.emailField);
-		landingpage.emailField.sendKeys("smoke2@yopmail.com");
-		landingpage.passwordField.sendKeys("p9aXcf");
+		landingpage.waitForWebElementToAppear(landingpage.emailFieldLogin);
+		landingpage.emailFieldLogin.sendKeys("smoke33@yopmail.com");
+		landingpage.passwordField.sendKeys("wIl9li");
 		landingpage.loginContinueBtn.click();
 		landingpage.waitForWebElementToAppear(driver.findElement(By.xpath("//div[@Role='alert']")));
 		String loginSuccessMessage = driver.findElement(By.xpath("//div[@Role='alert']")).getText();
@@ -104,7 +102,7 @@ public class LoginTest extends BaseTest {
 	public void TR_61() throws InterruptedException {
 		SoftAssert softAssert = new SoftAssert();
 		landingpage.loginBtn.click();
-		landingpage.waitForWebElementToAppear(landingpage.emailField);
+		landingpage.waitForWebElementToAppear(landingpage.emailFieldLogin);
 		landingpage.popupCloseBtn.click();
 		Thread.sleep(2000);
 		softAssert.assertTrue(landingpage.loginBtn.isDisplayed());
@@ -115,7 +113,7 @@ public class LoginTest extends BaseTest {
 	public void TR_62() throws InterruptedException {
 		SoftAssert softAssert = new SoftAssert();
 		landingpage.loginBtn.click();
-		landingpage.waitForWebElementToAppear(landingpage.emailField);
+		landingpage.waitForWebElementToAppear(landingpage.emailFieldLogin);
 		landingpage.forgotPassword.click();
 		Thread.sleep(2000);
 		softAssert.assertTrue(landingpage.headerResetPass.isDisplayed(), "Forgot Password button is not working");
@@ -125,12 +123,12 @@ public class LoginTest extends BaseTest {
 	@Test(description = "Make sure that new password should be sent to your email account when you reset the password.")
 	public void TR_63() throws InterruptedException {
 		SoftAssert softAssert = new SoftAssert();
-		landingpage.resetPassword("smoke1@yopmail.com");
+		landingpage.resetPassword("smoke111@yopmail.com");
 		String resetPassSuccessMessage = driver.findElement(By.xpath("//div[@Role='alert']")).getText();
 		softAssert.assertEquals(resetPassSuccessMessage,
 				"You will receive an email with password reset instructions shortly");
 
-		common.yopmailEmailPass("selenium26@yopmail.com");
+		common.yopmailEmailPass("smoke111@yopmail.com");
 		String emailInResetPasswordMail = driver.findElement(By.xpath("//p[contains(text(), 'Username:')]/span"))
 				.getText();
 		WebElement passwordInResetPasswordMailElement = driver
@@ -138,7 +136,7 @@ public class LoginTest extends BaseTest {
 		String passwordInResetPasswordMail = driver.findElement(By.xpath("//p[contains(text(), 'Password:')]/span"))
 				.getText();
 
-		softAssert.assertEquals(emailInResetPasswordMail, "selenium26@yopmail.com",
+		softAssert.assertEquals(emailInResetPasswordMail, "smoke111@yopmail.com",
 				"Email is wrong in the forgot password mail");
 		softAssert.assertTrue(passwordInResetPasswordMailElement.isDisplayed(), "Successfully Password Got.");
 		softAssert.assertAll();
@@ -148,9 +146,9 @@ public class LoginTest extends BaseTest {
 	public void TR_64() throws InterruptedException, IOException {
 		SoftAssert softAssert = new SoftAssert();
 		landingpage.enterMobileNumber("+91 9090407368");
-		landingpage.waitForWebElementToAppear(landingpage.emailField);
+		landingpage.waitForWebElementToAppear(landingpage.emailFieldRegister);
 		final String newEmail = common.randomEmail();
-		landingpage.emailField.sendKeys(newEmail);
+		landingpage.emailFieldRegister.sendKeys(newEmail);
 		System.out.println(newEmail);
 		landingpage.continueBtn.click();
 		Thread.sleep(2000);
@@ -159,6 +157,8 @@ public class LoginTest extends BaseTest {
 		
 		dashboard.billingInfoSubmit("First Name", "Last Name", "Address", "City", "382350");
 
+		//Close the Review Popup 
+		
 		Thread.sleep(3000);
 		dashboard.popupCloseBtn.click();
 		Thread.sleep(5000);
@@ -207,8 +207,8 @@ public class LoginTest extends BaseTest {
 		Thread.sleep(2000);
 
 		landingpage.loginBtn.click();
-		landingpage.waitForWebElementToAppear(landingpage.emailField);
-		landingpage.emailField.sendKeys("smoke1@yopmail.com");
+		landingpage.waitForWebElementToAppear(landingpage.emailFieldLogin);
+		landingpage.emailFieldLogin.sendKeys("smoke1@yopmail.com");
 		landingpage.passwordField.sendKeys(passwordInResetPasswordMail);
 		landingpage.loginContinueBtn.click();
 		Thread.sleep(2000);
@@ -225,8 +225,8 @@ public class LoginTest extends BaseTest {
 	public void TR_66() throws InterruptedException {
 		SoftAssert softAssert = new SoftAssert();
 		landingpage.loginBtn.click();
-		landingpage.waitForWebElementToAppear(landingpage.emailField);
-		landingpage.emailField.sendKeys("SMOKE2@yopmail.com");
+		landingpage.waitForWebElementToAppear(landingpage.emailFieldLogin);
+		landingpage.emailFieldLogin.sendKeys("SMOKE2@yopmail.com");
 		landingpage.passwordField.sendKeys("p9aXcf");
 		landingpage.loginContinueBtn.click();
 		Thread.sleep(2000);
