@@ -16,7 +16,7 @@ public class DashboardTest extends BaseTest {
 	public void TR_68() throws InterruptedException {
 		SoftAssert softAssert = new SoftAssert();
 		try {
-			landingpage.loginDash("selenium122@yopmail.com", "4KXbuA");
+			landingpage.loginDash("selenium123@yopmail.com", "nlvbvK");
 			String loginSuccessMessage = driver.findElement(By.xpath("//div[@Role='alert']")).getText();
 			softAssert.assertEquals(driver.getCurrentUrl(), "https://stage.location-tool.com/en/dash");
 			softAssert.assertTrue(dashboard.sideMenu.isDisplayed(), "Dashboard is not open after loginDash");
@@ -33,7 +33,7 @@ public class DashboardTest extends BaseTest {
 	public void TR_69() throws InterruptedException {
 		SoftAssert softAssert = new SoftAssert();
 		try {
-			landingpage.loginDash("selenium122@yopmail.com", "4KXbuA");
+			landingpage.loginDash("selenium123@yopmail.com", "nlvbvK");
 			WebElement dashLogo = driver.findElement(By.xpath("//div[@class='main-logo-img']//img"));
 			WebElement langOption = driver.findElement(By.xpath("//div[@class='header-lang-dropdown']//img[1]"));
 			softAssert.assertTrue(dashLogo.isDisplayed());
@@ -52,7 +52,7 @@ public class DashboardTest extends BaseTest {
 	@Test(description = "Make sure that phone number field should be visible.", priority = 3)
 	public void TR_70() throws InterruptedException {
 		try {
-			landingpage.loginDash("selenium122@yopmail.com", "4KXbuA");
+			landingpage.loginDash("selenium123@yopmail.com", "nlvbvK");
 			Assert.assertTrue(dashboard.numberWantToLocateField.isDisplayed());
 		} catch (Exception e) {
 			Assert.fail(e.getMessage());
@@ -64,7 +64,7 @@ public class DashboardTest extends BaseTest {
 	@Test(description = "Verify that map section should be visible.", priority = 4)
 	public void TR_72() throws InterruptedException {
 		try {
-			landingpage.loginDash("selenium122@yopmail.com", "4KXbuA");
+			landingpage.loginDash("selenium123@yopmail.com", "nlvbvK");
 			WebElement mapSection = driver.findElement(By.xpath("//div[@class='dashboard-map dashboard-box']"));
 			Assert.assertTrue(mapSection.isDisplayed());
 		} catch (Exception e) {
@@ -77,7 +77,7 @@ public class DashboardTest extends BaseTest {
 	@Test(description = "Verify that 'Phone Number You Want to Locate' placeholder should be visible in the phone number field.", priority = 5)
 	public void TR_73() throws InterruptedException {
 		try {
-			landingpage.loginDash("selenium122@yopmail.com", "4KXbuA");
+			landingpage.loginDash("selenium123@yopmail.com", "nlvbvK");
 			Assert.assertEquals(dashboard.numberWantToLocateField.getAttribute("placeholder"), "Enter a phone number");
 		} catch (Exception e) {
 			Assert.fail(e.getMessage());
@@ -89,7 +89,7 @@ public class DashboardTest extends BaseTest {
 	@Test(description = "Verify that 'Daily limit of 10 requests' text should be visible below the phone number field.", priority = 6)
 	public void TR_74() throws InterruptedException {
 		try {
-			landingpage.loginDash("selenium122@yopmail.com", "4KXbuA");
+			landingpage.loginDash("selenium123@yopmail.com", "nlvbvK");
 			Assert.assertEquals(
 					driver.findElement(By.xpath("//div[@class='dashboard-find-number dashboard-box']//p[1]")).getText(),
 					"Daily limit of 10 requests");
@@ -103,7 +103,7 @@ public class DashboardTest extends BaseTest {
 	@Test(description = "Verify that country code should visible in phone number field.", priority = 7)
 	public void TR_75() throws InterruptedException {
 		try {
-			landingpage.loginDash("selenium122@yopmail.com", "4KXbuA");
+			landingpage.loginDash("selenium123@yopmail.com", "nlvbvK");
 			WebElement countryCode = driver.findElement(By.xpath("(//div[@class='selected-flag'])[1]"));
 			Assert.assertTrue(countryCode.isDisplayed());
 		} catch (Exception e) {
@@ -116,7 +116,7 @@ public class DashboardTest extends BaseTest {
 	@Test(description = "Verify that Locate button should be visible besides of phone number field.", priority = 8)
 	public void TR_76() throws InterruptedException {
 		try {
-			landingpage.loginDash("selenium122@yopmail.com", "4KXbuA");
+			landingpage.loginDash("selenium123@yopmail.com", "nlvbvK");
 			Assert.assertTrue(dashboard.searchButton.isDisplayed());
 		} catch (Exception e) {
 			Assert.fail(e.getMessage());
@@ -128,7 +128,7 @@ public class DashboardTest extends BaseTest {
 	@Test(description = "Verify that user should able to enter the mobile number.", priority = 9)
 	public void TR_77() throws InterruptedException {
 		try {
-			landingpage.loginDash("selenium122@yopmail.com", "4KXbuA");
+			landingpage.loginDash("selenium123@yopmail.com", "nlvbvK");
 			dashboard.numberWantToLocateField.sendKeys("1234567890");
 			Assert.assertEquals(dashboard.numberWantToLocateField.getAttribute("value").replaceAll("\\s", ""),
 					"1234567890");
@@ -143,7 +143,7 @@ public class DashboardTest extends BaseTest {
 	public void TR_78() throws InterruptedException {
 		SoftAssert softAssert = new SoftAssert();
 		try {
-			landingpage.loginDash("selenium122@yopmail.com", "4KXbuA");
+			landingpage.loginDash("selenium123@yopmail.com", "nlvbvK");
 			dashboard.searchButton.click();
 			WebElement invalidNumberError = dashboard.invalidNumberError;
 			softAssert.assertEquals(invalidNumberError.getText(), "Please Enter Number");
@@ -159,7 +159,7 @@ public class DashboardTest extends BaseTest {
 	@Test(description = "Make sure that country code should be changed according to the country code.", priority = 11)
 	public void TR_79() throws InterruptedException {
 		try {
-			landingpage.loginDash("selenium122@yopmail.com", "4KXbuA");
+			landingpage.loginDash("selenium123@yopmail.com", "nlvbvK");
 			String[] countryCodesString = landingpage.totalCountryCodes();
 			Assert.assertEquals(Arrays.toString(countryCodesString), Arrays.toString(landingpage.expectedCountryCode));
 		} catch (Exception e) {
@@ -173,7 +173,7 @@ public class DashboardTest extends BaseTest {
 	public void TR_81() throws InterruptedException {
 		SoftAssert softAssert = new SoftAssert();
 		try {
-			landingpage.loginDash("selenium122@yopmail.com", "4KXbuA");
+			landingpage.loginDash("selenium123@yopmail.com", "nlvbvK");
 			for (int i = 0; i < landingpage.expectedCountryCode.length; i++) {
 				dashboard.numberWantToLocateField.sendKeys(landingpage.phoneNumbers[i]);
 				softAssert.assertEquals(landingpage.actualCountryCode(), landingpage.expectedCountryCode[i]);
@@ -193,7 +193,7 @@ public class DashboardTest extends BaseTest {
 	@Test(description = "Make sure that alphabets should not allow in the phone number field.", priority = 13)
 	public void TR_82() throws InterruptedException {
 		try {
-			landingpage.loginDash("selenium122@yopmail.com", "4KXbuA");
+			landingpage.loginDash("selenium123@yopmail.com", "nlvbvK");
 			dashboard.numberWantToLocateField.sendKeys("abcdefghijklmnopqrstuvwxyz");
 			Assert.assertEquals(dashboard.numberWantToLocateField.getText(), "");
 		} catch (Exception e) {
@@ -206,7 +206,7 @@ public class DashboardTest extends BaseTest {
 	@Test(description = "Make sure that special characters should not allow in the phone number filed.", priority = 14)
 	public void TR_83() throws InterruptedException {
 		try {
-			landingpage.loginDash("selenium122@yopmail.com", "4KXbuA");
+			landingpage.loginDash("selenium123@yopmail.com", "nlvbvK");
 			dashboard.numberWantToLocateField.sendKeys("!~`@#$%^&*()_-={}[];:''<>?/");
 			Assert.assertEquals(dashboard.numberWantToLocateField.getText(), "");
 		} catch (Exception e) {
@@ -219,7 +219,7 @@ public class DashboardTest extends BaseTest {
 	@Test(description = "Locating popup should be arrives if you search the valid number.", priority = 15)
 	public void TR_85() throws InterruptedException {
 		try {
-			landingpage.loginDash("case100@yopmail.com", "NZT03D");
+			landingpage.loginDash("selenium123@yopmail.com", "nlvbvK");
 			dashboard.numberWantToLocateField.sendKeys("1234567890");
 			dashboard.searchButton.click();
 			landingpage.waitForWebElementToAppear(dashboard.numberWhereYouWillReceiveResultField);
@@ -237,7 +237,7 @@ public class DashboardTest extends BaseTest {
 	public void TR_86() throws InterruptedException {
 		SoftAssert softAssert = new SoftAssert();
 		try {
-			landingpage.loginDash("case101@yopmail.com", "v8Fk7C");
+			landingpage.loginDash("selenium123@yopmail.com", "nlvbvK");
 			dashboard.numberWantToLocateField.sendKeys("1234567890");
 			dashboard.searchButton.click();
 			landingpage.waitForWebElementToAppear(dashboard.numberWhereYouWillReceiveResultField);
@@ -257,7 +257,7 @@ public class DashboardTest extends BaseTest {
 	@Test(description = "Verify that you cannot continue with the blank information in the locating popup.", priority = 17)
 	public void TR_87() throws InterruptedException {
 		try {
-			landingpage.loginDash("case102@yopmail.com", "zRYQr4");
+			landingpage.loginDash("selenium123@yopmail.com", "nlvbvK");
 			dashboard.locateNumber("1234567890", " ", " ");
 			Thread.sleep(2000);
 			WebElement numberFieldError = driver.findElement(By.xpath("(//div[@class='dashboard-locate']//p)[1]"));

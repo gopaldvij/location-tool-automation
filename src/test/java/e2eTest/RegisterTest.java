@@ -558,4 +558,6 @@ public class RegisterTest extends BaseTest {
 		}
 		softAssert.assertAll();
 	}
+	
+	
 }

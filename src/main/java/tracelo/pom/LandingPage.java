@@ -321,6 +321,34 @@ public class LandingPage extends AbstractComponent {
 
 	@FindBy(xpath = "//div[normalize-space(text())='Login']")
 	public WebElement headerLogin;
+	
+	@FindBy(css  = "h2.review_modal_title")
+	public WebElement reveiwModalTitleText;
+	
+	@FindBy(css  = "p.review_modal_description")
+	public WebElement reveiwModalDescriptionText;
+	
+	@FindBy(css  = "div.review_modal_rating")
+	public WebElement reveiwModalRating;
+	
+	@FindBy(css = "div.review_modal_rating p")
+	public WebElement reviewModalRatingText;
+	
+	@FindBy(xapth = "//div[@class='review_modal_rating']/ul/li")
+	public List<WebElement> reviewModalRatingStar;
+	
+	@FindBy(css = "div.review_submitted_icon")
+	public WebElement reviewSubmittedIcon;
+	
+	@FindBy(css = "h2.review_submitted_title")
+	public WebElement reviewSubmittedTitle;
+	
+	@FindBy(css = "p.review_submitted_description")
+	public WebElement reviewSubmittedDesc;
+
+	@FindBy(css = "div.review_submitted_close_btn")
+	public WebElement reviewSubmittedBtn;
+
 
 	public void login(String email, String password) throws InterruptedException {
 		loginBtn.click();
