@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Suite" parallel="classes" thread-count="5">
+
+	<listeners>
+		<listener class-name="testComponent.Listeners"></listener>
+		<listener class-name="testComponent.RetryTransformer" /> <!-- Listener for retry logic -->
+	</listeners>
+
+	<test name="Test">
+		<classes>
+			<class name="e2eTest.LandingPage" />
+			<class name="e2eTest.RegisterTest" />
+			<class name="e2eTest.LoginTest" />
+			<class name="e2eTest.DashboardTest" />
+			<class name="e2eTest.AccountTest" />
+		</classes>
+	</test>
+
+</suite>

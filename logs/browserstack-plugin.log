@@ -1,0 +1,81 @@
+15:00:39.889 [main] INFO  c.b.a.BrowserStackPropertyTester - Testing : isBrowserStackEnabled
+15:00:39.889 [main] INFO  c.b.BrowserStackPluginActivator - Prefs Keys []
+15:00:39.890 [main] INFO  c.b.a.BrowserStackPropertyTester - Validation Result isBrowserStackEnabled : true P/Tracelo Automation
+15:00:39.890 [main] INFO  c.b.a.BrowserStackPropertyTester - Testing : isBrowserStackDisabled
+15:00:39.890 [main] INFO  c.b.BrowserStackPluginActivator - Prefs Keys []
+15:00:39.891 [main] INFO  c.b.a.BrowserStackPropertyTester - Validation Result isBrowserStackDisabled : false P/Tracelo Automation
+15:00:41.547 [main] INFO  c.b.a.BrowserStackPropertyTester - Testing : isBrowserStackEnabled
+15:00:41.548 [main] INFO  c.b.BrowserStackPluginActivator - Prefs Keys []
+15:00:41.551 [main] INFO  c.b.a.BrowserStackPropertyTester - Validation Result isBrowserStackEnabled : true P/Tracelo Automation
+15:00:41.552 [main] INFO  c.b.a.BrowserStackPropertyTester - Testing : isBrowserStackDisabled
+15:00:41.553 [main] INFO  c.b.BrowserStackPluginActivator - Prefs Keys []
+15:00:41.554 [main] INFO  c.b.a.BrowserStackPropertyTester - Validation Result isBrowserStackDisabled : false P/Tracelo Automation
+16:03:44.519 [Worker-115: Launching LandingPage.TR_01] INFO  c.b.BrowserStackPluginActivator - The previous launch removed.
+16:03:44.521 [Worker-115: Launching LandingPage.TR_01] INFO  c.b.BrowserStackPluginActivator - The environment variables for the launch configuration are {}
+16:09:27.771 [Worker-116: Launching LandingPage.TR_01] INFO  c.b.BrowserStackPluginActivator - The previous launch removed.
+16:09:27.772 [Worker-116: Launching LandingPage.TR_01] INFO  c.b.BrowserStackPluginActivator - The environment variables for the launch configuration are {}
+16:19:13.149 [Worker-121: Launching LandingPage.TR_01] INFO  c.b.BrowserStackPluginActivator - The previous launch removed.
+16:19:13.151 [Worker-121: Launching LandingPage.TR_01] INFO  c.b.BrowserStackPluginActivator - The environment variables for the launch configuration are {}
+16:19:38.509 [Worker-121: Launching LandingPage.TR_01] INFO  c.b.BrowserStackPluginActivator - The previous launch removed.
+16:19:38.512 [Worker-121: Launching LandingPage.TR_01] INFO  c.b.BrowserStackPluginActivator - The environment variables for the launch configuration are {}
+16:35:15.007 [Worker-135: Launching LandingPage.TR_01] INFO  c.b.BrowserStackPluginActivator - The previous launch removed.
+16:35:15.010 [Worker-135: Launching LandingPage.TR_01] INFO  c.b.BrowserStackPluginActivator - The environment variables for the launch configuration are {}
+16:36:45.828 [Worker-134: Launching DashboardTest.TR_100] INFO  c.b.BrowserStackPluginActivator - The previous launch removed.
+16:36:45.830 [Worker-134: Launching DashboardTest.TR_100] INFO  c.b.BrowserStackPluginActivator - The environment variables for the launch configuration are {}
+16:36:52.947 [Worker-140: Launching LandingPage.TR_01] INFO  c.b.BrowserStackPluginActivator - The previous launch removed.
+16:36:52.949 [Worker-140: Launching LandingPage.TR_01] INFO  c.b.BrowserStackPluginActivator - The environment variables for the launch configuration are {}
+16:52:00.909 [Worker-140: Launching LandingPage.TR_01] INFO  c.b.BrowserStackPluginActivator - The previous launch removed.
+16:52:00.910 [Worker-140: Launching LandingPage.TR_01] INFO  c.b.BrowserStackPluginActivator - The environment variables for the launch configuration are {}
+16:57:36.069 [main] INFO  c.b.a.BrowserStackPropertyTester - Testing : isBrowserStackEnabled
+16:57:36.069 [main] INFO  c.b.BrowserStackPluginActivator - Prefs Keys []
+16:57:36.070 [main] INFO  c.b.a.BrowserStackPropertyTester - Validation Result isBrowserStackEnabled : true P/Location Tool Automation
+16:57:36.071 [main] INFO  c.b.a.BrowserStackPropertyTester - Testing : isBrowserStackDisabled
+16:57:36.071 [main] INFO  c.b.BrowserStackPluginActivator - Prefs Keys []
+16:57:36.073 [main] INFO  c.b.a.BrowserStackPropertyTester - Validation Result isBrowserStackDisabled : false P/Location Tool Automation
+16:57:43.760 [Worker-144: Launching LandingPage.TR_01] INFO  c.b.BrowserStackPluginActivator - The previous launch removed.
+16:57:43.761 [Worker-144: Launching LandingPage.TR_01] INFO  c.b.BrowserStackPluginActivator - The environment variables for the launch configuration are {}
+17:07:36.816 [Worker-154: Launching LandingPage.TR_01] INFO  c.b.BrowserStackPluginActivator - The previous launch removed.
+17:07:36.818 [Worker-154: Launching LandingPage.TR_01] INFO  c.b.BrowserStackPluginActivator - The environment variables for the launch configuration are {}
+17:08:02.081 [Worker-144: Launching LandingPage.TR_01] INFO  c.b.BrowserStackPluginActivator - The previous launch removed.
+17:08:02.081 [Worker-144: Launching LandingPage.TR_01] INFO  c.b.BrowserStackPluginActivator - The environment variables for the launch configuration are {}
+17:16:00.716 [Worker-163: Launching LandingPage.TR_01] INFO  c.b.BrowserStackPluginActivator - The previous launch removed.
+17:16:00.717 [Worker-163: Launching LandingPage.TR_01] INFO  c.b.BrowserStackPluginActivator - The environment variables for the launch configuration are {}
+17:25:12.900 [Worker-160: Launching LandingPage.TR_01] INFO  c.b.BrowserStackPluginActivator - The previous launch removed.
+17:25:12.901 [Worker-160: Launching LandingPage.TR_01] INFO  c.b.BrowserStackPluginActivator - The environment variables for the launch configuration are {}
+17:40:49.389 [Worker-168: Launching LandingPage.TR_01] INFO  c.b.BrowserStackPluginActivator - The previous launch removed.
+17:40:49.390 [Worker-168: Launching LandingPage.TR_01] INFO  c.b.BrowserStackPluginActivator - The environment variables for the launch configuration are {}
+17:57:18.063 [Worker-184: Launching LandingPage.TR_01] INFO  c.b.BrowserStackPluginActivator - The previous launch removed.
+17:57:18.063 [Worker-184: Launching LandingPage.TR_01] INFO  c.b.BrowserStackPluginActivator - The environment variables for the launch configuration are {}
+17:57:45.291 [Worker-184: Launching LandingPage.TR_01] INFO  c.b.BrowserStackPluginActivator - The previous launch removed.
+17:57:45.294 [Worker-184: Launching LandingPage.TR_01] INFO  c.b.BrowserStackPluginActivator - The environment variables for the launch configuration are {}
+17:58:20.089 [Worker-185: Launching LandingPage.TR_01] INFO  c.b.BrowserStackPluginActivator - The previous launch removed.
+17:58:20.090 [Worker-185: Launching LandingPage.TR_01] INFO  c.b.BrowserStackPluginActivator - The environment variables for the launch configuration are {}
+17:58:35.139 [Worker-186: Launching LandingPage.TR_01] INFO  c.b.BrowserStackPluginActivator - The previous launch removed.
+17:58:35.140 [Worker-186: Launching LandingPage.TR_01] INFO  c.b.BrowserStackPluginActivator - The environment variables for the launch configuration are {}
+18:33:02.819 [Worker-198: Launching LandingPage.TR_01] INFO  c.b.BrowserStackPluginActivator - The previous launch removed.
+18:33:02.820 [Worker-198: Launching LandingPage.TR_01] INFO  c.b.BrowserStackPluginActivator - The environment variables for the launch configuration are {}
+18:37:34.093 [Worker-205: Launching LandingPage.TR_01] INFO  c.b.BrowserStackPluginActivator - The previous launch removed.
+18:37:34.094 [Worker-205: Launching LandingPage.TR_01] INFO  c.b.BrowserStackPluginActivator - The environment variables for the launch configuration are {}
+18:38:09.103 [Worker-201: Launching LandingPage.TR_01] INFO  c.b.BrowserStackPluginActivator - The previous launch removed.
+18:38:09.104 [Worker-201: Launching LandingPage.TR_01] INFO  c.b.BrowserStackPluginActivator - The environment variables for the launch configuration are {}
+19:00:51.717 [Worker-217: Launching LoginTest] INFO  c.b.BrowserStackPluginActivator - The previous launch removed.
+19:00:51.718 [Worker-217: Launching LoginTest] INFO  c.b.BrowserStackPluginActivator - The environment variables for the launch configuration are {}
+19:01:17.481 [Worker-217: Launching Tracelo Automation_dashboardTest.xml] INFO  c.b.BrowserStackPluginActivator - The previous launch removed.
+19:01:17.482 [Worker-217: Launching Tracelo Automation_dashboardTest.xml] INFO  c.b.BrowserStackPluginActivator - The environment variables for the launch configuration are {}
+19:08:24.045 [Framework stop - Equinox Container: 60ff8f9f-24e4-47bb-a172-4c3ad6ca9a90] INFO  c.b.BrowserStackPluginActivator - Stopping BrowserStack Plugin...
+16:38:47.345 [main] INFO  c.b.launchers.LaunchMavenCommand - Executing maven archetype command - browserstack-sdk-archetype-integrate
+16:38:47.370 [main] INFO  c.b.launchers.LaunchMavenCommand - The maven properties for launcher are [archetypeVersion=1.5, archetypeGroupId=com.browserstack, archetypeArtifactId=browserstack-sdk-archetype-integrate, BROWSERSTACK_ACCESS_KEY=YOUR_ACCESS_KEY, groupId=com.browserstack, artifactId=java-archetype-integrate, BROWSERSTACK_USERNAME=YOUR_USERNAME, BROWSERSTACK_FRAMEWORK=java, BUILD_NAME=browserstack build, version=1.0, PROJECT_NAME=BrowserStack Sample, BROWSERSTACK_SOURCE=java:eclipse:v1.0.8]
+16:38:47.389 [Worker-112: Launching mavenrun-166cf827-1c75-4a8b-a967-132454f895f7] INFO  c.b.BrowserStackPluginActivator - The previous launch removed.
+16:39:12.078 [Worker-110: Launching LandingPage.TR_01] INFO  c.b.BrowserStackPluginActivator - The previous launch removed.
+16:39:12.081 [Worker-110: Launching LandingPage.TR_01] INFO  c.b.BrowserStackPluginActivator - The environment variables for the launch configuration are {}
+16:40:53.253 [Worker-108: Launching LandingPage.TR_01] INFO  c.b.BrowserStackPluginActivator - The previous launch removed.
+16:40:53.254 [Worker-108: Launching LandingPage.TR_01] INFO  c.b.BrowserStackPluginActivator - Existing javaagentArgline (BROWSERSTACK_JAVAAGENT_ARGLINE) in plugin prefs is 
+16:40:53.256 [Worker-108: Launching LandingPage.TR_01] INFO  c.b.BrowserStackPluginActivator - Prefs Keys []
+16:40:53.256 [Worker-108: Launching LandingPage.TR_01] INFO  c.b.BrowserStackPluginActivator - The environment variables for the launch configuration are {BROWSERSTACK_EXEC_SOURCE=eclipse/1.0.8}
+16:41:07.899 [main] INFO  c.b.a.BrowserStackPropertyTester - Testing : isBrowserStackEnabled
+16:41:07.899 [main] INFO  c.b.BrowserStackPluginActivator - Prefs Keys []
+16:41:07.901 [main] INFO  c.b.a.BrowserStackPropertyTester - Validation Result isBrowserStackEnabled : true P/Location Tool Automation
+16:41:07.901 [main] INFO  c.b.a.BrowserStackPropertyTester - Testing : isBrowserStackDisabled
+16:41:07.901 [main] INFO  c.b.BrowserStackPluginActivator - Prefs Keys []
+16:41:07.904 [main] INFO  c.b.a.BrowserStackPropertyTester - Validation Result isBrowserStackDisabled : false P/Location Tool Automation
+18:40:28.652 [Framework stop - Equinox Container: d21c4077-7469-4edd-8031-dc72e1cdc388] INFO  c.b.BrowserStackPluginActivator - Stopping BrowserStack Plugin...

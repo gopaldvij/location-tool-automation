@@ -1,0 +1,451 @@
+<html>
+<head>
+<title>TestNG:  Landing Page Test</title>
+<link href="../testng.css" rel="stylesheet" type="text/css" />
+<link href="../my-testng.css" rel="stylesheet" type="text/css" />
+
+<style type="text/css">
+.log { display: none;} 
+.stack-trace { display: none;} 
+</style>
+<script type="text/javascript">
+<!--
+function flip(e) {
+  current = e.style.display;
+  if (current == 'block') {
+    e.style.display = 'none';
+    return 0;
+  }
+  else {
+    e.style.display = 'block';
+    return 1;
+  }
+}
+
+function toggleBox(szDivId, elem, msg1, msg2)
+{
+  var res = -1;  if (document.getElementById) {
+    res = flip(document.getElementById(szDivId));
+  }
+  else if (document.all) {
+    // this is the way old msie versions work
+    res = flip(document.all[szDivId]);
+  }
+  if(elem) {
+    if(res == 0) elem.innerHTML = msg1; else elem.innerHTML = msg2;
+  }
+
+}
+
+function toggleAllBoxes() {
+  if (document.getElementsByTagName) {
+    d = document.getElementsByTagName('div');
+    for (i = 0; i < d.length; i++) {
+      if (d[i].className == 'log') {
+        flip(d[i]);
+      }
+    }
+  }
+}
+
+// -->
+</script>
+
+</head>
+<body>
+<h2 align='center'>Landing Page Test</h2><table border='1' align="center">
+<tr>
+<td>Tests passed/Failed/Skipped:</td><td>25/1/2</td>
+</tr><tr>
+<td>Started on:</td><td>Fri Sep 27 19:30:35 IST 2024</td>
+</tr>
+<tr><td>Total time:</td><td>805 seconds (805176 ms)</td>
+</tr><tr>
+<td>Included groups:</td><td></td>
+</tr><tr>
+<td>Excluded groups:</td><td></td>
+</tr>
+</table><p/>
+<small><i>(Hover the method name to see the test class name)</i></small><p/>
+<table width='100%' border='1' class='invocation-failed'>
+<tr><td colspan='4' align='center'><b>FAILED CONFIGURATIONS</b></td></tr>
+<tr><td><b>Test method</b></td>
+<td width="30%"><b>Exception</b></td>
+<td width="10%"><b>Time (seconds)</b></td>
+<td><b>Instance</b></td>
+</tr>
+<tr>
+<td title='e2eTest.DashboardTest.openWebsite()'><b>openWebsite</b><br>Test class: e2eTest.DashboardTest<br>Parameters: public void e2eTest.DashboardTest.TR_96() throws java.lang.InterruptedException</td>
+<td><div><pre>org.openqa.selenium.NoSuchWindowException: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=129.0.6668.70)
+Build info: version: &apos;4.12.0&apos;, revision: &apos;249f2a7d1b*&apos;
+System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;22.0.1&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [6d6dbbc01dee345186e841e430a20a56, get {url=https://stage.tracelo.com/en}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 129.0.6668.70, chrome: {chromedriverVersion: 129.0.6668.70 (df87d5cf12b1..., userDataDir: C:\Users\GOPALS~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:58608}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:58608/devtoo..., se:cdpVersion: 129.0.6668.70, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 6d6dbbc01dee345186e841e430a20a56
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:52)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:191)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:196)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:171)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:602)
+	at org.openqa.selenium.remote.RemoteWebDriver.get(RemoteWebDriver.java:304)
+	at testComponent.BaseTest.openWebsite(BaseTest.java:118)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+... Removed 32 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1503319846", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1503319846'><pre>org.openqa.selenium.NoSuchWindowException: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=129.0.6668.70)
+Build info: version: &apos;4.12.0&apos;, revision: &apos;249f2a7d1b*&apos;
+System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;22.0.1&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [6d6dbbc01dee345186e841e430a20a56, get {url=https://stage.tracelo.com/en}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 129.0.6668.70, chrome: {chromedriverVersion: 129.0.6668.70 (df87d5cf12b1..., userDataDir: C:\Users\GOPALS~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:58608}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:58608/devtoo..., se:cdpVersion: 129.0.6668.70, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 6d6dbbc01dee345186e841e430a20a56
+	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:502)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:486)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:52)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:191)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:196)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:171)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:602)
+	at org.openqa.selenium.remote.RemoteWebDriver.get(RemoteWebDriver.java:304)
+	at testComponent.BaseTest.openWebsite(BaseTest.java:118)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
+	at org.testng.internal.MethodInvocationHelper.invokeMethodConsideringTimeout(MethodInvocationHelper.java:62)
+	at org.testng.internal.ConfigInvoker.invokeConfigurationMethod(ConfigInvoker.java:385)
+	at org.testng.internal.ConfigInvoker.invokeConfigurations(ConfigInvoker.java:321)
+	at org.testng.internal.TestInvoker.runConfigMethods(TestInvoker.java:700)
+	at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:527)
+	at org.testng.internal.TestInvoker.retryFailed(TestInvoker.java:213)
+	at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:58)
+	at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:824)
+	at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+	at org.testng.TestRunner.privateRun(TestRunner.java:794)
+	at org.testng.TestRunner.run(TestRunner.java:596)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:371)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:332)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:276)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1134)
+	at org.testng.TestNG.runSuites(TestNG.java:1063)
+	at org.testng.TestNG.run(TestNG.java:1031)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+</pre></div></td>
+<td>0</td>
+<td>e2eTest.DashboardTest@6127a7e</td></tr>
+</table><p>
+<table width='100%' border='1' class='invocation-failed'>
+<tr><td colspan='4' align='center'><b>FAILED TESTS</b></td></tr>
+<tr><td><b>Test method</b></td>
+<td width="30%"><b>Exception</b></td>
+<td width="10%"><b>Time (seconds)</b></td>
+<td><b>Instance</b></td>
+</tr>
+<tr>
+<td title='e2eTest.DashboardTest.TR_100()'><b>TR_100</b><br>Test class: e2eTest.DashboardTest<br>Test method: Verify that all the languages should be visible in the langagues list.</td>
+<td><div><pre>java.lang.AssertionError: The following asserts failed:
+	expected [https://stage.tracelo.com/static/media/Dark-Logo.b008842b3aea781190a38a0017e39e45.svg] but found [null],
+	expected [Location Request Successfully Sent!] but found []
+	at e2eTest.DashboardTest.TR_100(DashboardTest.java:436)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+... Removed 27 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1323763455", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1323763455'><pre>java.lang.AssertionError: The following asserts failed:
+	expected [https://stage.tracelo.com/static/media/Dark-Logo.b008842b3aea781190a38a0017e39e45.svg] but found [null],
+	expected [Location Request Successfully Sent!] but found []
+	at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:47)
+	at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:31)
+	at e2eTest.DashboardTest.TR_100(DashboardTest.java:436)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
+	at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:598)
+	at org.testng.internal.TestInvoker.retryFailed(TestInvoker.java:213)
+	at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:58)
+	at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:824)
+	at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+	at org.testng.TestRunner.privateRun(TestRunner.java:794)
+	at org.testng.TestRunner.run(TestRunner.java:596)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:371)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:332)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:276)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1134)
+	at org.testng.TestNG.runSuites(TestNG.java:1063)
+	at org.testng.TestNG.run(TestNG.java:1031)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+</pre></div></td>
+<td>8</td>
+<td>e2eTest.DashboardTest@6127a7e</td></tr>
+</table><p>
+<table width='100%' border='1' class='invocation-passed'>
+<tr><td colspan='4' align='center'><b>PASSED TESTS</b></td></tr>
+<tr><td><b>Test method</b></td>
+<td width="30%"><b>Exception</b></td>
+<td width="10%"><b>Time (seconds)</b></td>
+<td><b>Instance</b></td>
+</tr>
+<tr>
+<td title='e2eTest.DashboardTest.TR_69()'><b>TR_69</b><br>Test class: e2eTest.DashboardTest<br>Test method: Verify that Tracelo Logo, Language, and Side Bar should be visible.</td>
+<td></td>
+<td>16</td>
+<td>e2eTest.DashboardTest@6127a7e</td></tr>
+<tr>
+<td title='e2eTest.DashboardTest.TR_98()'><b>TR_98</b><br>Test class: e2eTest.DashboardTest<br>Test method: Verify that Account page should be open when you click on the Account Page.</td>
+<td></td>
+<td>21</td>
+<td>e2eTest.DashboardTest@6127a7e</td></tr>
+<tr>
+<td title='e2eTest.DashboardTest.TR_86()'><b>TR_86</b><br>Test class: e2eTest.DashboardTest<br>Test method: Verify that you got the locating popup where you have three fields : Phone Number field, Message, Continue</td>
+<td></td>
+<td>9</td>
+<td>e2eTest.DashboardTest@6127a7e</td></tr>
+<tr>
+<td title='e2eTest.DashboardTest.TR_83()'><b>TR_83</b><br>Test class: e2eTest.DashboardTest<br>Test method: Make sure that special characters should not allow in the phone number filed.</td>
+<td></td>
+<td>17</td>
+<td>e2eTest.DashboardTest@6127a7e</td></tr>
+<tr>
+<td title='e2eTest.DashboardTest.TR_85()'><b>TR_85</b><br>Test class: e2eTest.DashboardTest<br>Test method: Locating popup should be arrives if you search the valid number.</td>
+<td></td>
+<td>8</td>
+<td>e2eTest.DashboardTest@6127a7e</td></tr>
+<tr>
+<td title='e2eTest.DashboardTest.TR_87()'><b>TR_87</b><br>Test class: e2eTest.DashboardTest<br>Test method: Verify that you cannot continue with the blank information in the locating popup.</td>
+<td></td>
+<td>8</td>
+<td>e2eTest.DashboardTest@6127a7e</td></tr>
+<tr>
+<td title='e2eTest.DashboardTest.TR_81()'><b>TR_81</b><br>Test class: e2eTest.DashboardTest<br>Test method: Verify that country code and flag should changed if i paste the mobile number.</td>
+<td></td>
+<td>317</td>
+<td>e2eTest.DashboardTest@6127a7e</td></tr>
+<tr>
+<td title='e2eTest.DashboardTest.TR_88()'><b>TR_88</b><br>Test class: e2eTest.DashboardTest<br>Test method: Verify that when you click on the 'Cancel' button then locating popup should close.</td>
+<td></td>
+<td>9</td>
+<td>e2eTest.DashboardTest@6127a7e</td></tr>
+<tr>
+<td title='e2eTest.DashboardTest.TR_99()'><b>TR_99</b><br>Test class: e2eTest.DashboardTest<br>Test method: Make sure that user should logged out when you click on the logout button.</td>
+<td></td>
+<td>18</td>
+<td>e2eTest.DashboardTest@6127a7e</td></tr>
+<tr>
+<td title='e2eTest.DashboardTest.TR_97()'><b>TR_97</b><br>Test class: e2eTest.DashboardTest<br>Test method: Verify that Dashboard , Account and Logout button should be visible in the Side Menu.</td>
+<td></td>
+<td>8</td>
+<td>e2eTest.DashboardTest@6127a7e</td></tr>
+<tr>
+<td title='e2eTest.DashboardTest.TR_77()'><b>TR_77</b><br>Test class: e2eTest.DashboardTest<br>Test method: Verify that user should able to enter the mobile number.</td>
+<td></td>
+<td>16</td>
+<td>e2eTest.DashboardTest@6127a7e</td></tr>
+<tr>
+<td title='e2eTest.DashboardTest.TR_74()'><b>TR_74</b><br>Test class: e2eTest.DashboardTest<br>Test method: Verify that 'Daily limit of 10 requests' text should be visible below the phone number field.</td>
+<td></td>
+<td>16</td>
+<td>e2eTest.DashboardTest@6127a7e</td></tr>
+<tr>
+<td title='e2eTest.DashboardTest.TR_79()'><b>TR_79</b><br>Test class: e2eTest.DashboardTest<br>Test method: Make sure that country code should be changed according to the country code.</td>
+<td></td>
+<td>19</td>
+<td>e2eTest.DashboardTest@6127a7e</td></tr>
+<tr>
+<td title='e2eTest.DashboardTest.TR_93()'><b>TR_93</b><br>Test class: e2eTest.DashboardTest<br>Test method: Verify that Number you want to locate should be visible in the history listing.</td>
+<td></td>
+<td>10</td>
+<td>e2eTest.DashboardTest@6127a7e</td></tr>
+<tr>
+<td title='e2eTest.DashboardTest.TR_72()'><b>TR_72</b><br>Test class: e2eTest.DashboardTest<br>Test method: Verify that map section should be visible.</td>
+<td></td>
+<td>16</td>
+<td>e2eTest.DashboardTest@6127a7e</td></tr>
+<tr>
+<td title='e2eTest.DashboardTest.TR_89()'><b>TR_89</b><br>Test class: e2eTest.DashboardTest<br>Test method: Verify that same number should be visible on the locating which we have added in number want to locate field.</td>
+<td></td>
+<td>12</td>
+<td>e2eTest.DashboardTest@6127a7e</td></tr>
+<tr>
+<td title='e2eTest.DashboardTest.TR_68()'><b>TR_68</b><br>Test class: e2eTest.DashboardTest<br>Test method: Verify that dashboard should arrives after login.</td>
+<td></td>
+<td>17</td>
+<td>e2eTest.DashboardTest@6127a7e</td></tr>
+<tr>
+<td title='e2eTest.DashboardTest.TR_90()'><b>TR_90</b><br>Test class: e2eTest.DashboardTest<br>Test method: Verify that 'Location Request Successfully Sent!' message arrives if you click Continue after entering the valid details</td>
+<td></td>
+<td>9</td>
+<td>e2eTest.DashboardTest@6127a7e</td></tr>
+<tr>
+<td title='e2eTest.DashboardTest.TR_94()'><b>TR_94</b><br>Test class: e2eTest.DashboardTest<br>Test method: Verify that location status should be pending in the history listing until user don't click on the location url.</td>
+<td></td>
+<td>10</td>
+<td>e2eTest.DashboardTest@6127a7e</td></tr>
+<tr>
+<td title='e2eTest.DashboardTest.TR_82()'><b>TR_82</b><br>Test class: e2eTest.DashboardTest<br>Test method: Make sure that alphabets should not allow in the phone number field.</td>
+<td></td>
+<td>16</td>
+<td>e2eTest.DashboardTest@6127a7e</td></tr>
+<tr>
+<td title='e2eTest.DashboardTest.TR_73()'><b>TR_73</b><br>Test class: e2eTest.DashboardTest<br>Test method: Verify that 'Phone Number You Want to Locate' placeholder should be visible in the phone number field.</td>
+<td></td>
+<td>16</td>
+<td>e2eTest.DashboardTest@6127a7e</td></tr>
+<tr>
+<td title='e2eTest.DashboardTest.TR_78()'><b>TR_78</b><br>Test class: e2eTest.DashboardTest<br>Test method: Verify that error should arrives when i click on the locate button without entering a number.</td>
+<td></td>
+<td>16</td>
+<td>e2eTest.DashboardTest@6127a7e</td></tr>
+<tr>
+<td title='e2eTest.DashboardTest.TR_70()'><b>TR_70</b><br>Test class: e2eTest.DashboardTest<br>Test method: Make sure that phone number field should be visible.</td>
+<td></td>
+<td>16</td>
+<td>e2eTest.DashboardTest@6127a7e</td></tr>
+<tr>
+<td title='e2eTest.DashboardTest.TR_76()'><b>TR_76</b><br>Test class: e2eTest.DashboardTest<br>Test method: Verify that Locate button should be visible besides of phone number field.</td>
+<td></td>
+<td>16</td>
+<td>e2eTest.DashboardTest@6127a7e</td></tr>
+<tr>
+<td title='e2eTest.DashboardTest.TR_75()'><b>TR_75</b><br>Test class: e2eTest.DashboardTest<br>Test method: Verify that country code should visible in phone number field.</td>
+<td></td>
+<td>16</td>
+<td>e2eTest.DashboardTest@6127a7e</td></tr>
+</table><p>
+<table width='100%' border='1' class='invocation-skipped'>
+<tr><td colspan='4' align='center'><b>SKIPPED TESTS</b></td></tr>
+<tr><td><b>Test method</b></td>
+<td width="30%"><b>Exception</b></td>
+<td width="10%"><b>Time (seconds)</b></td>
+<td><b>Instance</b></td>
+</tr>
+<tr>
+<td title='e2eTest.DashboardTest.TR_100()'><b>TR_100</b><br>Test class: e2eTest.DashboardTest<br>Test method: Verify that all the languages should be visible in the langagues list.</td>
+<td><div><pre>java.lang.AssertionError: The following asserts failed:
+	expected [https://stage.tracelo.com/static/media/Dark-Logo.b008842b3aea781190a38a0017e39e45.svg] but found [null],
+	expected [Location Request Successfully Sent!] but found []
+	at e2eTest.DashboardTest.TR_100(DashboardTest.java:436)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+... Removed 27 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace365036495", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace365036495'><pre>java.lang.AssertionError: The following asserts failed:
+	expected [https://stage.tracelo.com/static/media/Dark-Logo.b008842b3aea781190a38a0017e39e45.svg] but found [null],
+	expected [Location Request Successfully Sent!] but found []
+	at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:47)
+	at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:31)
+	at e2eTest.DashboardTest.TR_100(DashboardTest.java:436)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
+	at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:598)
+	at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
+	at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+	at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:824)
+	at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+	at org.testng.TestRunner.privateRun(TestRunner.java:794)
+	at org.testng.TestRunner.run(TestRunner.java:596)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:371)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:332)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:276)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1134)
+	at org.testng.TestNG.runSuites(TestNG.java:1063)
+	at org.testng.TestNG.run(TestNG.java:1031)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+</pre></div></td>
+<td>9</td>
+<td>e2eTest.DashboardTest@6127a7e</td></tr>
+<tr>
+<td title='e2eTest.DashboardTest.TR_96()'><b>TR_96</b><br>Test class: e2eTest.DashboardTest<br>Test method: Make sure that Daily 10 request should be allowed for location.</td>
+<td><div><pre>org.openqa.selenium.NoSuchElementException: Unable to find element with locator By.xpath: //div[@class=&apos;hum-burger-menu&apos;]
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Build info: version: &apos;4.12.0&apos;, revision: &apos;249f2a7d1b*&apos;
+System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;22.0.1&apos;
+Driver info: driver.version: RemoteWebDriver
+	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:168)
+	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:359)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:353)
+	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:68)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
+	at jdk.proxy2/jdk.proxy2.$Proxy17.click(Unknown Source)
+	at tracelo.pom.Dashboard.logout(Dashboard.java:112)
+	at e2eTest.DashboardTest.TR_96(DashboardTest.java:386)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+... Removed 25 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace365054732", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace365054732'><pre>org.openqa.selenium.NoSuchElementException: Unable to find element with locator By.xpath: //div[@class=&apos;hum-burger-menu&apos;]
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Build info: version: &apos;4.12.0&apos;, revision: &apos;249f2a7d1b*&apos;
+System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;22.0.1&apos;
+Driver info: driver.version: RemoteWebDriver
+	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:168)
+	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:359)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:353)
+	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:68)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
+	at jdk.proxy2/jdk.proxy2.$Proxy17.click(Unknown Source)
+	at tracelo.pom.Dashboard.logout(Dashboard.java:112)
+	at e2eTest.DashboardTest.TR_96(DashboardTest.java:386)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
+	at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:598)
+	at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
+	at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+	at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:824)
+	at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+	at org.testng.TestRunner.privateRun(TestRunner.java:794)
+	at org.testng.TestRunner.run(TestRunner.java:596)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:371)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:332)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:276)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1134)
+	at org.testng.TestNG.runSuites(TestNG.java:1063)
+	at org.testng.TestNG.run(TestNG.java:1031)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+</pre></div></td>
+<td>26</td>
+<td>e2eTest.DashboardTest@6127a7e</td></tr>
+</table><p>
+</body>
+</html>
