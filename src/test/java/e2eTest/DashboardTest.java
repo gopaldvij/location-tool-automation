@@ -381,8 +381,8 @@ public class DashboardTest extends BaseTest {
 		try {
 			Thread.sleep(3000);
 			landingpage.enterMobileNumber("+91 1234567890");
-			landingpage.waitForWebElementToAppear(landingpage.emailField);
-			landingpage.emailField.sendKeys(common.randomEmail());
+			landingpage.waitForWebElementToAppear(landingpage.emailFieldRegister);
+			landingpage.emailFieldRegister.sendKeys(common.randomEmail());
 			landingpage.continueBtn.click();
 			Thread.sleep(2000);
 
