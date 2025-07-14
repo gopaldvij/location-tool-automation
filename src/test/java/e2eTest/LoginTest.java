@@ -14,6 +14,7 @@ public class LoginTest extends BaseTest {
 	@Test(description = "Verify that Login popup should open when i click on the Login button.")
 	public void TR_54() throws InterruptedException {
 		SoftAssert softAssert = new SoftAssert();
+		//GOpal Sakhiya
 		landingpage.loginBtn.click();
 		landingpage.waitForWebElementToAppear(driver.findElement(By.xpath("//div[normalize-space(text())='Login']")));
 		WebElement headerLoginPopup = driver.findElement(By.xpath("//div[normalize-space(text())='Login']"));
