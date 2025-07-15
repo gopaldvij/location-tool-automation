@@ -1,0 +1,538 @@
+package tracelo.pom;
+
+import java.time.Duration;
+import java.util.List;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.Assert;
+
+import abstractComponent.AbstractComponent;
+import abstractComponent.Common;
+
+public class LandingPage extends AbstractComponent {
+
+	WebDriver driver;
+
+	public static final String[] langCode = { "ars", "isk", "aed", "amd", "aud", "azn", "bbd", "bgn", "bnd", "brl",
+			"bsd", "bwp", "cad", "chf", "clp", "cop", "cve", "czk", "dkk", "egp", "eur", "fjd", "gbp", "gel", "gtq",
+			"gyd", "huf", "ils", "jpy", "krw", "lkr", "mad", "mxn", "myr", "nad", "nok", "nzd", "pab", "pen", "pkr",
+			"pln", "qar", "ron", "sar", "scr", "sek", "sgd", "szl", "thb", "try", "ttd", "uah", "usd", "uyu", "xcd",
+			"zar", "all", "dzd", "aoa", "bdt", "byn", "bob", "bam", "cny", "crc", "dop", "hkd", "inr", "idr", "kzt",
+			"mdl", "ngn", "php", "rsd", "twd", "vnd" };
+
+	public static final String[] expectedLanguages = { "Cesky", "Deutsch", "Español", "Ελληνικά", "Français", "Magyar",
+			"Suomalainen", "Islenskur", "Eesti keel", "हिंदी", "粵語", "แบบไทย", "বাংলা", "Melayu", "한국인", "Hrvatski",
+			"中国人", "Gaeilge", "Bahasa Indonesia", "日本語", "Svenska", "Italiano", "Български", "Српски", "Yкраїнська",
+			"עִברִית", "Slovenský", "Dansk", "عربي", "Nederlands", "Norsk", "Polski", "普通话", "Português", "Română",
+			"Slovenščina", "Türk", "Português(BR)" };
+
+	public static final String[] expectedCountryCode = { "+93", "+355", "+213", "+376", "+244", "+1268", "+54", "+374",
+			"+297", "+61", "+43", "+994", "+1242", "+973", "+880", "+1246", "+375", "+32", "+501", "+229", "+975",
+			"+591", "+387", "+267", "+55", "+246", "+673", "+359", "+226", "+257", "+855", "+237", "+1", "+238", "+599",
+			"+236", "+235", "+56", "+86", "+57", "+269", "+243", "+242", "+506", "+225", "+385", "+53", "+599", "+357",
+			"+420", "+45", "+253", "+1767", "+1", "+593", "+20", "+503", "+240", "+291", "+372", "+251", "+679", "+358",
+			"+33", "+594", "+689", "+241", "+220", "+995", "+49", "+233", "+30", "+1473", "+590", "+1671", "+502",
+			"+224", "+245", "+592", "+509", "+504", "+852", "+36", "+354", "+91", "+62", "+98", "+964", "+353", "+972",
+			"+39", "+1876", "+81", "+962", "+7", "+254", "+686", "+383", "+965", "+996", "+856", "+371", "+961", "+266",
+			"+231", "+218", "+423", "+370", "+352", "+853", "+389", "+261", "+265", "+60", "+960", "+223", "+356",
+			"+692", "+596", "+222", "+230", "+52", "+691", "+373", "+377", "+976", "+382", "+212", "+258", "+95",
+			"+264", "+674", "+977", "+31", "+687", "+64", "+505", "+227", "+234", "+850", "+47", "+968", "+92", "+680",
+			"+970", "+507", "+675", "+595", "+51", "+63", "+48", "+351", "+1", "+974", "+262", "+40", "+7", "+250",
+			"+1869", "+1758", "+1784", "+685", "+378", "+239", "+966", "+221", "+381", "+248", "+232", "+65", "+421",
+			"+386", "+677", "+252", "+27", "+82", "+211", "+34", "+94", "+249", "+597", "+268", "+46", "+41", "+963",
+			"+886", "+992", "+255", "+66", "+670", "+228", "+676", "+1868", "+216", "+90", "+993", "+688", "+256",
+			"+380", "+971", "+44", "+1", "+598", "+998", "+678", "+39", "+58", "+84", "+967", "+260", "+263" };
+
+	public static final String[] phoneNumbers = { "+93 27991389", "+355 45657073", "+213 94349421", "+376 35748340",
+			"+244 70971693", "+1268 41140906", "+54 31810056", "+374 46100491", "+297 72905473", "+61 432 293 058",
+			"+43 05084337", "+994 30280814", "+1242 93677524", "+973 40893013", "+880 30251284", "+1246 17866947",
+			"+375 46602448", "+32 82082209", "+501 68036004", "+229 27643446", "+975 84796735", "+591 27225145",
+			"+387 75843092", "+267 56351806", "+55 67846752", "+246 35937705", "+673 91583661", "+359 06171026",
+			"+226 02756322", "+257 60518336", "+855 55045567", "+237 47201791", "+1 4313047209", "+238 05001278",
+			"+599 71165727", "+236 94402786", "+235 51034447", "+56 64124713", "+86 33651600", "+57 25056117",
+			"+269 53457369", "+243 15381947", "+242 21593901", "+506 30180479", "+225 08478947", "+385 22485041",
+			"+53 32365814", "+599 98765432", "+357 76279707", "+420 59062532", "+45 92927515", "+253 16493715",
+			"+1767 56532374", "+1 8292365950", "+593 64979890", "+20 40970486", "+503 12586081", "+240 22678580",
+			"+291 33341164", "+372 71422983", "+251 02868054", "+679 75297290", "+358 27823469", "+33 55963320",
+			"+594 34752143", "+689 23976446", "+241 26772601", "+220 50801706", "+995 19741668", "+49 45331082",
+			"+233 53025943", "+30 00170416", "+1473 13652041", "+590 690123456", "+1671 68126492", "+502 12446878",
+			"+224 05883745", "+245 14342494", "+592 01060031", "+509 60057821", "+504 10247803", "+852 98913833",
+			"+36 64641434", "+354 85120012", "+91 95398090", "+62 78194403", "+98 91228822", "+964 50178291",
+			"+353 67779246", "+972 18783463", "+39 3509254925", "+1876 22419695", "+81 18432790", "+962 85572329",
+			"+7 7753172515", "+254 12398075", "+686 03938853", "+383 71510404", "+965 67188829", "+996 32169513",
+			"+856 02019137", "+371 61753025", "+961 17140442", "+266 65407362", "+231 79593913", "+218 63792601",
+			"+423 21897116", "+370 83390757", "+352 24346956", "+853 19110644", "+389 44747503", "+261 45255252",
+			"+265 08690609", "+60 29155985", "+960 48728587", "+223 41518248", "+356 03641136", "+692 88223401",
+			"+596 76012499", "+222 68595648", "+230 17907262", "+52 88056064", "+691 30091717", "+373 59854083",
+			"+377 22104224", "+976 26354809", "+382 56689591", "+2120777296081", "+258 04075222", "+95 56207512",
+			"+264 47345045", "+674 33284393", "+977 86348785", "+31 60229556", "+687 15781930", "+64 86117826",
+			"+505 18880003", "+227 63354332", "+234 25668569", "+850 69994958", "+47 97763779", "+968 59126485",
+			"+92 60974999", "+680 39398198", "+970 98224148", "+507 18490408", "+675 74058274", "+595 90151323",
+			"+51 54069713", "+63 94107611", "+48 09526999", "+351 52756230", "+1 7875550123", "+974 93923467",
+			"+262 693555750", "+40 99867997", "+7 929 250-24-83", "+250 33811905", "+1869 61122210", "+1758 66444169",
+			"+1784 01175156", "+685 16893339", "+378 54377485", "+239 47222010", "+966 67728494", "+221 15684069",
+			"+381 75387351", "+248 45103161", "+232 94249165", "+65 46358520", "+421 96757001", "+386 81662917",
+			"+677 90996952", "+252 45372278", "+27 39271341", "+82 18968766", "+211 77333388", "+34 95000897",
+			"+94 64335929", "+249 23087056", "+597 44402423", "+268 61424515", "+46 94058563", "+41 46197987",
+			"+963 51497490", "+886 93694047", "+992 37757280", "+255 62402625", "+66 72831610", "+670 34574020",
+			"+228 45550916", "+676 19618294", "+1868 35053909", "+216 60326129", "+90 37516025", "+993 81723488",
+			"+688 21877480", "+256 92854856", "+380 97242016", "+971 25459865", "+44 7930 424071", "+1 9796373898",
+			"+598 39174034", "+998 07343613", "+678 94091629", "+39 06 698 91234", "+58 55575517", "+84 08664584",
+			"+967 81908441", "+260 46040572", "+263 91843272" };
+
+	public LandingPage(WebDriver driver) {
+		super(driver);
+		this.driver = driver;
+		PageFactory.initElements(driver, this);
+	}
+
+	// Landing Page Locators
+	@FindBy(xpath = "//div[@class='header-menu']//a[text()='F.A.Q']")
+	public WebElement FAQ;
+
+	@FindBy(xpath = "//div[@class='header-menu']//a[text()='Pricing']")
+	public WebElement Pricing;
+
+	@FindBy(xpath = "//div[@class='header-menu']//a[text()='Contact']")
+	public WebElement Contact;
+
+	@FindBy(xpath = "//div[@class='header-menu']//a[text()='Unsubscribe']")
+	public WebElement Unsubscribe;
+
+	@FindBy(xpath = "//div[starts-with(@class, 'header-lang-drop')]")
+	public WebElement langDropdown;
+
+	@FindBy(xpath = "//span[@aria-label='close']")
+	public WebElement langListCloseBtn;
+
+	@FindBy(css = ".modal-title")
+	public WebElement langListTitle;
+
+	@FindBy(xpath = "//button[text()='Login']")
+	public WebElement loginBtn;
+
+	@FindBy(xpath = "//div[@class='login-modal-section']")
+	public WebElement loginPopup;
+
+	@FindBy(xpath = "//input[@placeholder='Enter a phone number']")
+	public WebElement enterPhoneNumberField;
+
+	@FindBy(xpath = "(//input[@type='tel']/following-sibling::div)[1]/div")
+	public WebElement flagDropdown;
+
+//	@FindBy(xpath = "(//div[@class='selected-flag'])[1]")
+//	public WebElement flagDropdown;
+
+	@FindBy(xpath = "//span[text()='Locate']")
+	public WebElement locateBtn;
+
+	@FindBy(css = ".invelid-number-error")
+	public WebElement invalidNumberError;
+
+	@FindBy(id = "email")
+	public WebElement emailFieldLogin;
+
+	@FindBy(xpath = "//input[@aria-label='Email']")
+	public WebElement emailFieldRegister;	
+	
+	@FindBy(xpath = "//div[@class='submit-btn-modal']")
+	public WebElement continueBtn;
+
+	@FindBy(xpath="//iframe[starts-with(@id,'spreedly-number-frame')]")
+	public WebElement iframeStripe;
+	
+	@FindBy(xpath="//iframe[starts-with(@id,'spreedly-cvv')]")
+	public WebElement iframeCvv;
+
+	@FindBy(xpath = "card_number")
+	public WebElement stripeCardNumberField;
+
+	@FindBy(xpath = "//button[text()='Start Trial']")
+	public WebElement startTrialBtn;
+
+	@FindBy(xpath = "//button[text()='Subscribe Now']")
+	public WebElement subscribeNowBtn;
+
+	@FindBy(xpath = "//a[text()='Sign up']")
+	public WebElement signUpBtn;
+
+	@FindBy(xpath = "//iframe[starts-with(@id,'spreedly-number-frame')]")
+	public WebElement iframeSpreedly;
+
+	@FindBy(xpath = "//input[@id='card_number']")
+	public WebElement spreedlyCardNumebr;
+
+	@FindBy(id = "Field-expiryInput")
+	public WebElement stripeCardExpireField;
+	
+	@FindBy(xpath = "//input[@name='expiry']")
+	public WebElement spreedlyCardExpireField;
+	
+	@FindBy(xpath = "//input[@title='cvv number']")
+	public WebElement spreedlyCvvField;
+	
+	@FindBy(xpath = "//button[text()='Submit']")
+	public WebElement spreedlyCardSubmitBtn;
+
+	@FindBy(xpath = "//input[@id='Field-cvcInput']")
+	public WebElement stripeCardCvvField;
+
+	@FindBy(xpath = "//button[@id='submit']")
+	public WebElement stripeCardSubmitBtn;
+
+	@FindBy(id = "Field-numberError")
+	public WebElement stripeCardNumberError;
+
+	@FindBy(id = "Field-expiryError")
+	public WebElement stripeCardExpireDateError;
+
+	@FindBy(id = "Field-cvcError")
+	public WebElement stripeCardCvvError;
+	
+	@FindBy(xpath = "//p[@class='common-error']")
+	public WebElement spreedlyCardNumberError;
+
+	@FindBy(xpath = "//input[@inputmode='numeric']/following-sibling::p[1]")
+	public WebElement spreedlyCardExpireDateError;
+
+	@FindBy(xpath = "//div[@id='spreedly-cvv']/following-sibling::p[1]")
+	public WebElement spreedlyCardCvvError;
+
+	@FindBy(xpath = "//div[@class='right-payment pay']//p[1]")
+	public WebElement actualTrialAmountElement;
+
+	@FindBy(xpath = "//div[@class='special-offerbox-partition']")
+	public WebElement pricingBoxes;
+
+	@FindBy(xpath = "(//div[@class='special-offerbox-partition']//div)[1]")
+	public WebElement specialOfferBox;
+
+	@FindBy(css = ".img-box-2")
+	public WebElement trialPeriodBox;
+
+	@FindBy(css = ".img-box-3")
+	public WebElement subscriptionBox;
+
+	@FindBy(css = ".how-work-container")
+	public WebElement howDoesItWorkSection;
+
+	@FindBy(css = ".how-work-title")
+	public WebElement howDoesWorkTitle;
+
+	@FindBy(css = ".how-work-desc-sections")
+	public WebElement howDoesWorkSections;
+
+	@FindBy(css = ".choose-tracelo-container")
+	public WebElement chooseTraceloSections;
+
+	@FindBy(xpath = "//button[text()='Locate Phone']")
+	public WebElement locatePhoneBtn;
+
+	@FindBy(css = ".frequently-asked-question")
+	public WebElement faqSection;
+
+	@FindBy(css = ".question-title")
+	public WebElement faqTitle;
+
+	@FindBy(xpath = "//div[@class='collapse-box-title']")
+	public List<WebElement> faqList;
+
+	@FindBy(css = ".collapse-box-icon")
+	public List<WebElement> collapseBtn;
+
+	@FindBy(xpath = "//div[@class='open-tab-desc']//p")
+	public WebElement faqParagraph;
+
+	@FindBy(css = ".footer-section")
+	public WebElement footerSection;
+
+	@FindBy(xpath = "//div[@class='footer-logo']//img[1]")
+	public WebElement footerLogo;
+
+	@FindBy(css = ".header-logo")
+	public WebElement headerLogo;
+
+	@FindBy(css = ".footer-desc")
+	public WebElement footerDescription;
+
+	@FindBy(css = ".tracelo-footer")
+	public WebElement footerTraceloText;
+
+	@FindBy(xpath = "(//div[@class='cookies-policy'])[1]")
+	public WebElement footerCookiesPolicy;
+
+	@FindBy(xpath = "(//div[@class='cookies-policy'])[2]")
+	public WebElement footerPrivacyPolicy;
+
+	@FindBy(xpath = "//div[@class='tems-policy']")
+	public WebElement footerTermsPolicy;
+
+	@FindBy(xpath = "//div[@class='legal-info']//div[@class='legal-title']")
+	public WebElement footerLegalInfoTitle;
+
+	@FindBy(xpath = "//div[@class='account-menu']//div[@class='legal-title']")
+	public WebElement footerAccountTitle;
+
+	@FindBy(xpath = "//div[@class='legal-menus']//a[text()='Pricing']")
+	public WebElement footerPricing;
+
+	@FindBy(xpath = "//div[@class='legal-menus']//a[text()='Contact']")
+	public WebElement footerContact;
+
+	@FindBy(xpath = "//div[@class='legal-menus']//a[text()='F.A.Q']")
+	public WebElement footerFaq;
+
+	@FindBy(xpath = "//div[@class='account-menu']//a[text()='Login']")
+	public WebElement footerLogin;
+
+	@FindBy(xpath = "//div[@class='account-menu']//a[text()='Sign up']")
+	public WebElement footerSignup;
+
+	@FindBy(xpath = "//div[@class='account-menu']//a[text()='Unsubscribe']")
+	public WebElement footerUnsubscribe;
+
+	@FindBy(xpath = "//span[@aria-label='close']")
+	public WebElement popupCloseBtn;
+
+	@FindBy(xpath = "(//div[@class='lang false']//span)")
+	private List<WebElement> languageListElements;
+
+	@FindBy(xpath = "(//img[@alt='Main Logo'])[1]")
+	public WebElement logo;
+
+	@FindBy(xpath = "//div[@class='login-modal-title']")
+	public WebElement billingInfoElement;
+
+	@FindBy(id = "password")
+	public WebElement passwordField;
+
+	@FindBy(xpath = "//button[normalize-space(text())='Continue']")
+	public WebElement loginContinueBtn;
+
+	@FindBy(xpath = "//p[contains(.,'Forgot Password?')]")
+	public WebElement forgotPassword;
+
+	@FindBy(xpath = "//button[normalize-space(text())='Set New Password']")
+	public WebElement setNewPassBtn;
+
+	@FindBy(xpath = "//div[normalize-space(text())='Reset Password']")
+	public WebElement headerResetPass;
+
+	@FindBy(xpath = "//div[normalize-space(text())='Login']")
+	public WebElement headerLogin;
+	
+	@FindBy(css  = "h2.review_modal_title")
+	public WebElement reveiwModalTitleText;
+	
+	@FindBy(css  = "p.review_modal_description")
+	public WebElement reveiwModalDescriptionText;
+	
+	@FindBy(css  = "div.review_modal_rating")
+	public WebElement reveiwModalRating;
+	
+	@FindBy(css = "div.review_modal_rating p")
+	public WebElement reviewModalRatingText;
+	
+	@FindBy(xpath = "//div[@class='review_modal_rating']/ul/li")
+	public List<WebElement> reviewModalRatingStar;
+	
+	@FindBy(css = "div.review_submitted_icon")
+	public WebElement reviewSubmittedIcon;
+	
+	@FindBy(css = "h2.review_submitted_title")
+	public WebElement reviewSubmittedTitle;
+	
+	@FindBy(css = "p.review_submitted_description")
+	public WebElement reviewSubmittedDesc;
+
+	@FindBy(css = "div.review_submitted_close_btn")
+	public WebElement reviewSubmittedBtn;
+
+
+	public void login(String email, String password) throws InterruptedException {
+		loginBtn.click();
+		waitForWebElementToAppear(emailFieldLogin);
+		emailFieldLogin.sendKeys(email);
+		passwordField.sendKeys(password);
+		loginContinueBtn.click();
+		Thread.sleep(5000);
+	}
+
+	public void loginDash(String email, String password) throws InterruptedException {
+		loginBtn.click();
+		waitForWebElementToAppear(emailFieldLogin);
+		emailFieldLogin.sendKeys(email);
+		passwordField.sendKeys(password);
+		loginContinueBtn.click();
+		Thread.sleep(3000);
+	}
+
+	public String[] totalLanguages() {
+		langDropdown.click();
+		waitForWebElementToAppear(langListCloseBtn);
+		String[] foundLanguages = new String[languageListElements.size()];
+
+		// Store the text of each language name in the array
+		for (int i = 0; i < languageListElements.size(); i++) {
+			foundLanguages[i] = languageListElements.get(i).getText();
+		}
+		return foundLanguages;
+	}
+
+	public String actualCountryName() throws InterruptedException {
+		Thread.sleep(5000);
+		String[] countrySplit = flagDropdown.getAttribute("title").replaceAll("\\s+", "").trim().split(":");
+		String actualCountry = countrySplit[0];
+		return actualCountry;
+	}
+
+	public String actualCountryCode() throws InterruptedException {
+		Thread.sleep(1000);
+		String[] countrySplit = flagDropdown.getAttribute("title").replaceAll("\\s+", "").trim().split(":");
+		String actualCountryCode = countrySplit[1];
+		return actualCountryCode;
+	}
+
+	public String[] totalCountryCodes() {
+		flagDropdown.click();
+		List<WebElement> countryCodeElement = driver.findElements(By.xpath("(//span[@class='dial-code'])"));
+		String[] foundCountryCode = new String[countryCodeElement.size()];
+
+		for (int i = 0; i < countryCodeElement.size(); i++) {
+			foundCountryCode[i] = countryCodeElement.get(i).getText();
+		}
+		return foundCountryCode;
+	}
+
+	public void resetEnterPhoneNumberField() {
+		// Ensure the element is focused
+		Actions actions = new Actions(driver);
+		enterPhoneNumberField.click();
+		actions.moveToElement(enterPhoneNumberField).click().keyDown(Keys.CONTROL).sendKeys("a").keyUp(Keys.CONTROL)
+				.sendKeys(Keys.BACK_SPACE) // Delete the selected text
+				.perform();
+	}
+
+	public void openWebsite(String URL) {
+		driver.get(URL);
+	}
+
+	public void stripeSubmit(String cardnumber, String expiredate, String cvv) throws InterruptedException {
+		driver.switchTo().frame(iframeStripe);
+		Thread.sleep(1000);
+		spreedlyCardNumebr.sendKeys(cardnumber);
+		driver.switchTo().defaultContent();
+		spreedlyCardExpireField.sendKeys(expiredate);
+		driver.switchTo().frame(iframeCvv);
+		spreedlyCvvField.sendKeys(cvv);
+		driver.switchTo().defaultContent();
+		Thread.sleep(2000);
+		spreedlyCardSubmitBtn.click();
+		Thread.sleep(20000);
+	}
+
+	public void enterMobileNumber(String number) throws InterruptedException {
+		enterPhoneNumberField.sendKeys(number);
+		Thread.sleep(2000);
+		locateBtn.click();
+	}
+
+	public void resetPassword(String email) throws InterruptedException {
+		loginBtn.click();
+		waitForWebElementToAppear(emailFieldLogin);
+		forgotPassword.click();
+		waitForWebElementToAppear(headerResetPass);
+		emailFieldLogin.sendKeys(email);
+		setNewPassBtn.click();
+		Thread.sleep(2000);
+	}
+	
+	public void verifyReviewModalAndSetRating(String expectedTitle, String exceptedDescription,int starToClick) {
+		// Wait until modal elements are visible
+	    WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+	    wait.until(ExpectedConditions.visibilityOf(reveiwModalTitleText));
+	    wait.until(ExpectedConditions.visibilityOf(reveiwModalDescriptionText));
+	    
+	    //Assertion - Modal Title and Description
+	    // Verify title and description
+	    Assert.assertEquals(reveiwModalTitleText.getText().trim(), expectedTitle, "Modal title text does not match.");
+	    Assert.assertEquals(reveiwModalDescriptionText.getText().trim(), exceptedDescription, "Modal description text does not match.");
+		
+	    // Click on the desired star (index starts from 0)
+	    if (starToClick < 1 || starToClick > 5) {
+	        throw new IllegalArgumentException("Rating must be between 1 and 5.");
+	    }
+	    
+	    WebElement starElement = reviewModalRatingStar.get(starToClick - 1);
+	    starElement.click();
+
+	    // Wait and verify updated rating text (e.g., "3/5")
+	    wait.until(ExpectedConditions.textToBePresentInElement(reviewModalRatingText, starToClick + "/5"));   
+	}
+	
+	public void verifyAndCloseReviewSubmitted(String expectedTitle, String expectedDescription) {
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+
+	    // Wait for elements to be visible
+	    wait.until(ExpectedConditions.visibilityOf(reviewSubmittedIcon));
+	    wait.until(ExpectedConditions.visibilityOf(reviewSubmittedTitle));
+	    wait.until(ExpectedConditions.visibilityOf(reviewSubmittedDesc));
+	    wait.until(ExpectedConditions.visibilityOf(reviewSubmittedBtn));
+
+	    // Verify title and description text
+	    Assert.assertEquals(reviewSubmittedTitle.getText().trim(), expectedTitle, "Submitted title does not match.");
+	    Assert.assertEquals(reviewSubmittedDesc.getText().trim(), expectedDescription, "Submitted description does not match.");
+
+	    // Click on close button
+	    reviewSubmittedBtn.click();
+
+	    // Optionally wait for the modal to disappear
+	    wait.until(ExpectedConditions.invisibilityOf(reviewSubmittedBtn));
+	}
+
+	@Test(description = "Verify that review modal opens, rating can be selected, and submission confirmation appears correctly.")
+	public void TR_54_verifyReviewFlow() throws InterruptedException {
+		SoftAssert softAssert = new SoftAssert();
+			landingpage.enterMobileNumber("+91 1234567890");
+			landingpage.waitForWebElementToAppear(landingpage.emailFieldRegister);
+			landingpage.emailFieldRegister.sendKeys(common.randomEmail());
+			landingpage.continueBtn.click();
+			Thread.sleep(2000);
+
+			landingpage.stripeSubmit("5555 5555 5555 4444", "229", "231");
+
+			dashboard.billingInfoSubmit("First Name", "Last Name", "Address", "City", "382350");
+
+			locatingPopup.countryCodeDropdown.click();
+			Thread.sleep(4000);
+			WebElement indiaFlag = driver.findElement(By.xpath("(//span[text()='India'])[2]"));
+			indiaFlag.click();
+
+		    // Test data
+		    String modalTitle = "Thanks for joining us!";
+		    String modalDescription = "We’d truly appreciate it if you could leave us a review. Your feedback is incredibly valuable to us.";
+		    int rating = 3;
+
+		    String submittedTitle = "Review submitted!";
+		    String submittedDescription = "Thanks for taking the time to share your feedback!";
+
+	    // Step 1: Open the modal (assume action is required before this test or included in preconditions)
+	    // e.g., click a button to open the modal if needed
+	    // reviewButton.click(); // ← Add if modal is not already open
+
+		    // Step 2: Verify review modal and set rating
+		    landingpage.verifyReviewModalAndSetRating(modalTitle, modalDescription, rating);
+	
+		    // Step 3: Verify the success screen and close it
+		    landingpage.verifyAndCloseReviewSubmitted(submittedTitle, submittedDescription);
+		}
+	}
+}

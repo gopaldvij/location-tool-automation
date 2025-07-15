@@ -1,5 +1,6 @@
 package tracelo.pom;
 
+import java.time.Duration;
 import java.util.List;
 
 import org.openqa.selenium.By;
@@ -9,6 +10,11 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.Assert;
+import org.testng.annotations.Test;
+import org.testng.asserts.SoftAssert;
 
 import abstractComponent.AbstractComponent;
 import abstractComponent.Common;
@@ -324,6 +330,34 @@ public class LandingPage extends AbstractComponent {
 
 	@FindBy(xpath = "//div[normalize-space(text())='Login']")
 	public WebElement headerLogin;
+	
+	@FindBy(css  = "h2.review_modal_title")
+	public WebElement reveiwModalTitleText;
+	
+	@FindBy(css  = "p.review_modal_description")
+	public WebElement reveiwModalDescriptionText;
+	
+	@FindBy(css  = "div.review_modal_rating")
+	public WebElement reveiwModalRating;
+	
+	@FindBy(css = "div.review_modal_rating p")
+	public WebElement reviewModalRatingText;
+	
+	@FindBy(xpath = "//div[@class='review_modal_rating']/ul/li")
+	public List<WebElement> reviewModalRatingStar;
+	
+	@FindBy(css = "div.review_submitted_icon")
+	public WebElement reviewSubmittedIcon;
+	
+	@FindBy(css = "h2.review_submitted_title")
+	public WebElement reviewSubmittedTitle;
+	
+	@FindBy(css = "p.review_submitted_description")
+	public WebElement reviewSubmittedDesc;
+
+	@FindBy(css = "div.review_submitted_close_btn")
+	public WebElement reviewSubmittedBtn;
+
 
 	public void login(String email, String password) throws InterruptedException {
 		loginBtn.click();
@@ -422,4 +456,48 @@ public class LandingPage extends AbstractComponent {
 		setNewPassBtn.click();
 		Thread.sleep(2000);
 	}
+	
+	public void verifyReviewModalAndSetRating(String expectedTitle, String exceptedDescription,int starToClick) {
+		// Wait until modal elements are visible
+	    WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+	    wait.until(ExpectedConditions.visibilityOf(reveiwModalTitleText));
+	    wait.until(ExpectedConditions.visibilityOf(reveiwModalDescriptionText));
+	    
+	    //Assertion - Modal Title and Description
+	    // Verify title and description
+	    Assert.assertEquals(reveiwModalTitleText.getText().trim(), expectedTitle, "Modal title text does not match.");
+	    Assert.assertEquals(reveiwModalDescriptionText.getText().trim(), exceptedDescription, "Modal description text does not match.");
+		
+	    // Click on the desired star (index starts from 0)
+	    if (starToClick < 1 || starToClick > 5) {
+	        throw new IllegalArgumentException("Rating must be between 1 and 5.");
+	    }
+	    
+	    WebElement starElement = reviewModalRatingStar.get(starToClick - 1);
+	    starElement.click();
+
+	    // Wait and verify updated rating text (e.g., "3/5")
+	    wait.until(ExpectedConditions.textToBePresentInElement(reviewModalRatingText, starToClick + "/5"));   
+	}
+	
+	public void verifyAndCloseReviewSubmitted(String expectedTitle, String expectedDescription) {
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+
+	    // Wait for elements to be visible
+	    wait.until(ExpectedConditions.visibilityOf(reviewSubmittedIcon));
+	    wait.until(ExpectedConditions.visibilityOf(reviewSubmittedTitle));
+	    wait.until(ExpectedConditions.visibilityOf(reviewSubmittedDesc));
+	    wait.until(ExpectedConditions.visibilityOf(reviewSubmittedBtn));
+
+	    // Verify title and description text
+	    Assert.assertEquals(reviewSubmittedTitle.getText().trim(), expectedTitle, "Submitted title does not match.");
+	    Assert.assertEquals(reviewSubmittedDesc.getText().trim(), expectedDescription, "Submitted description does not match.");
+
+	    // Click on close button
+	    reviewSubmittedBtn.click();
+
+	    // Optionally wait for the modal to disappear
+	    wait.until(ExpectedConditions.invisibilityOf(reviewSubmittedBtn));
+	}
+
 }

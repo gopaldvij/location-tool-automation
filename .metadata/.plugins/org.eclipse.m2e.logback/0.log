@@ -1,0 +1,66 @@
+2025-07-15 09:18:15,204 [Worker-4: Loading available Gradle versions] INFO  o.e.b.c.i.u.g.PublishedGradleVersions - Gradle version information cache is not available. Remote download required.
+2025-07-15 09:24:39,006 [Worker-27: Updating Maven Dependencies] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: Tracelo:Automation:0.0.1-SNAPSHOT @ C:\Users\BAPS\OneDrive\Documents\location-tool-automation\pom.xml.
+2025-07-15 09:24:40,475 [Worker-27: Updating Maven Dependencies] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/com/browserstack/browserstack-java-sdk/maven-metadata.xml
+2025-07-15 09:24:40,492 [Worker-27: Updating Maven Dependencies] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/com/browserstack/browserstack-java-sdk/maven-metadata.xml
+2025-07-15 09:24:40,577 [Worker-27: Updating Maven Dependencies] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/com/browserstack/browserstack-java-sdk/1.36.2/browserstack-java-sdk-1.36.2.pom
+2025-07-15 09:24:40,618 [Worker-27: Updating Maven Dependencies] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/com/browserstack/browserstack-java-sdk/1.36.2/browserstack-java-sdk-1.36.2.pom
+2025-07-15 09:24:40,820 [Worker-27: Updating Maven Dependencies] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/com/browserstack/browserstack-java-sdk/1.36.2/browserstack-java-sdk-1.36.2.jar
+2025-07-15 09:24:41,989 [Worker-5: Building] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: Tracelo:Automation:0.0.1-SNAPSHOT @ C:\Users\BAPS\OneDrive\Documents\location-tool-automation\pom.xml.
+2025-07-15 09:24:43,422 [Worker-27: Updating Maven Dependencies] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/com/browserstack/browserstack-java-sdk/1.36.2/browserstack-java-sdk-1.36.2.jar
+2025-07-15 09:24:45,521 [Worker-5: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\BAPS\OneDrive\Documents\location-tool-automation\src\main\resources
+2025-07-15 09:24:45,525 [Worker-5: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\BAPS\OneDrive\Documents\location-tool-automation\src\test\resources
+2025-07-15 09:24:45,933 [Worker-26: Download sources and javadoc] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/com/browserstack/browserstack-java-sdk/1.36.2/browserstack-java-sdk-1.36.2-sources.jar
+2025-07-15 09:24:45,940 [Worker-26: Download sources and javadoc] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/com/browserstack/browserstack-java-sdk/1.36.2/browserstack-java-sdk-1.36.2-sources.jar
+2025-07-15 09:24:45,946 [Worker-26: Download sources and javadoc] INFO  o.e.m.j.internal.DownloadSourcesJob - Downloaded sources for com.browserstack:browserstack-java-sdk:1.36.2
+2025-07-15 09:24:46,895 [Worker-8: Updating Maven Dependencies] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: Tracelo:Automation:0.0.1-SNAPSHOT @ C:\Users\BAPS\OneDrive\Documents\location-tool-automation\pom.xml.
+2025-07-15 09:24:47,844 [Worker-29: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\BAPS\OneDrive\Documents\location-tool-automation\src\main\resources
+2025-07-15 09:24:47,848 [Worker-29: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\BAPS\OneDrive\Documents\location-tool-automation\src\test\resources
+2025-07-15 09:24:49,194 [Worker-25: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\BAPS\OneDrive\Documents\location-tool-automation\src\main\resources
+2025-07-15 09:24:49,195 [Worker-25: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\BAPS\OneDrive\Documents\location-tool-automation\src\test\resources
+2025-07-15 09:25:43,357 [Worker-27: Updating Maven Dependencies] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: Tracelo:Automation:0.0.1-SNAPSHOT @ C:\Users\BAPS\OneDrive\Documents\location-tool-automation\pom.xml.
+2025-07-15 09:27:00,743 [Worker-3: Pulling origin from https://github.com/gopaldvij/location-tool-automation.git] WARN  o.e.j.i.storage.file.RefDirectory - Unable to remove path 'C:\Users\BAPS\OneDrive\Documents\location-tool-automation\.git\refs\remotes\origin'
+java.nio.file.AccessDeniedException: C:\Users\BAPS\OneDrive\Documents\location-tool-automation\.git\refs\remotes\origin
+	at java.base/sun.nio.fs.WindowsException.translateToIOException(WindowsException.java:89)
+	at java.base/sun.nio.fs.WindowsException.rethrowAsIOException(WindowsException.java:103)
+	at java.base/sun.nio.fs.WindowsException.rethrowAsIOException(WindowsException.java:108)
+	at java.base/sun.nio.fs.WindowsFileSystemProvider.implDelete(WindowsFileSystemProvider.java:273)
+	at java.base/sun.nio.fs.AbstractFileSystemProvider.deleteIfExists(AbstractFileSystemProvider.java:110)
+	at java.base/java.nio.file.Files.deleteIfExists(Files.java:1192)
+	at org.eclipse.jgit.internal.storage.file.RefDirectory.deleteEmptyParentDirs(RefDirectory.java:1416)
+	at org.eclipse.jgit.internal.storage.file.RefDirectory.deleteAndUnlock(RefDirectory.java:1409)
+	at org.eclipse.jgit.internal.storage.file.RefDirectory.pack(RefDirectory.java:868)
+	at org.eclipse.jgit.internal.storage.file.RefDirectory.pack(RefDirectory.java:769)
+	at org.eclipse.jgit.internal.storage.file.PackedBatchRefUpdate.execute(PackedBatchRefUpdate.java:152)
+	at org.eclipse.jgit.lib.BatchRefUpdate.execute(BatchRefUpdate.java:589)
+	at org.eclipse.jgit.transport.FetchProcess.executeImp(FetchProcess.java:249)
+	at org.eclipse.jgit.transport.FetchProcess.execute(FetchProcess.java:105)
+	at org.eclipse.jgit.transport.Transport.fetch(Transport.java:1458)
+	at org.eclipse.jgit.api.FetchCommand.call(FetchCommand.java:238)
+	at org.eclipse.jgit.api.PullCommand.call(PullCommand.java:266)
+	at org.eclipse.egit.core.op.PullOperation$PullJob.run(PullOperation.java:256)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+2025-07-15 09:27:32,012 [Worker-4: Loading available Gradle versions] INFO  o.e.b.c.i.u.g.PublishedGradleVersions - Gradle version information cache is up-to-date. Trying to read.
+2025-07-15 09:27:39,792 [Worker-7: Building] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: Tracelo:Automation:0.0.1-SNAPSHOT @ C:\Users\BAPS\OneDrive\Documents\location-tool-automation\pom.xml.
+2025-07-15 09:27:41,833 [Worker-6: Updating Maven Dependencies] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: Tracelo:Automation:0.0.1-SNAPSHOT @ C:\Users\BAPS\OneDrive\Documents\location-tool-automation\pom.xml.
+2025-07-15 09:29:18,601 [Worker-4: Loading available Gradle versions] INFO  o.e.b.c.i.u.g.PublishedGradleVersions - Gradle version information cache is up-to-date. Trying to read.
+2025-07-15 09:29:51,143 [Worker-10: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\BAPS\OneDrive\Documents\location-tool-automation\src\main\resources
+2025-07-15 09:29:51,148 [Worker-10: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\BAPS\OneDrive\Documents\location-tool-automation\src\test\resources
+2025-07-15 09:30:28,283 [Worker-4: Loading available Gradle versions] INFO  o.e.b.c.i.u.g.PublishedGradleVersions - Gradle version information cache is up-to-date. Trying to read.
+2025-07-15 09:33:48,476 [Worker-25: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\BAPS\OneDrive\Documents\location-tool-automation\src\main\resources
+2025-07-15 09:33:48,480 [Worker-25: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\BAPS\OneDrive\Documents\location-tool-automation\src\test\resources
+2025-07-15 09:35:25,381 [Worker-25: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\BAPS\OneDrive\Documents\location-tool-automation\src\main\resources
+2025-07-15 09:35:25,397 [Worker-25: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\BAPS\OneDrive\Documents\location-tool-automation\src\test\resources
+2025-07-15 09:35:43,126 [Worker-25: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\BAPS\OneDrive\Documents\location-tool-automation\src\main\resources
+2025-07-15 09:35:43,130 [Worker-25: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\BAPS\OneDrive\Documents\location-tool-automation\src\test\resources
+2025-07-15 09:38:10,757 [Worker-25: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\BAPS\OneDrive\Documents\location-tool-automation\src\main\resources
+2025-07-15 09:38:10,759 [Worker-25: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\BAPS\OneDrive\Documents\location-tool-automation\src\test\resources
+2025-07-15 09:38:24,670 [Worker-25: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\BAPS\OneDrive\Documents\location-tool-automation\src\main\resources
+2025-07-15 09:38:24,672 [Worker-25: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\BAPS\OneDrive\Documents\location-tool-automation\src\test\resources
+2025-07-15 09:38:35,585 [Worker-28: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\BAPS\OneDrive\Documents\location-tool-automation\src\main\resources
+2025-07-15 09:38:35,588 [Worker-28: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\BAPS\OneDrive\Documents\location-tool-automation\src\test\resources
+2025-07-15 09:38:55,848 [Worker-6: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\BAPS\OneDrive\Documents\location-tool-automation\src\main\resources
+2025-07-15 09:38:55,849 [Worker-6: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\BAPS\OneDrive\Documents\location-tool-automation\src\test\resources
+2025-07-15 09:39:00,884 [Worker-28: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\BAPS\OneDrive\Documents\location-tool-automation\src\main\resources
+2025-07-15 09:39:00,887 [Worker-28: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\BAPS\OneDrive\Documents\location-tool-automation\src\test\resources
+2025-07-15 09:39:39,014 [Worker-25: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\BAPS\OneDrive\Documents\location-tool-automation\src\main\resources
+2025-07-15 09:39:39,017 [Worker-25: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\BAPS\OneDrive\Documents\location-tool-automation\src\test\resources

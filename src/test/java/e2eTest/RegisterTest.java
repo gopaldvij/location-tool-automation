@@ -558,4 +558,41 @@ public class RegisterTest extends BaseTest {
 		}
 		softAssert.assertAll();
 	}
+	
+	@Test(description = "Verify that review modal opens, rating can be selected, and submission confirmation appears correctly.")
+	public void TR_54_verifyReviewFlow() throws InterruptedException {
+		    SoftAssert softAssert = new SoftAssert();
+			landingpage.enterMobileNumber("+91 1234567890");
+			landingpage.waitForWebElementToAppear(landingpage.emailFieldRegister);
+			landingpage.emailFieldRegister.sendKeys(common.randomEmail());
+			landingpage.continueBtn.click();
+			Thread.sleep(2000);
+
+			landingpage.stripeSubmit("5555 5555 5555 4444", "229", "231");
+
+			dashboard.billingInfoSubmit("First Name", "Last Name", "Address", "City", "382350");
+
+			locatingPopup.countryCodeDropdown.click();
+			Thread.sleep(4000);
+			WebElement indiaFlag = driver.findElement(By.xpath("(//span[text()='India'])[2]"));
+			indiaFlag.click();
+
+		    // Test data
+		    String modalTitle = "Thanks for joining us!";
+		    String modalDescription = "We’d truly appreciate it if you could leave us a review. Your feedback is incredibly valuable to us.";
+		    int rating = 3;
+
+		    String submittedTitle = "Review submitted!";
+		    String submittedDescription = "Thanks for taking the time to share your feedback!";
+
+	    // Step 1: Open the modal (assume action is required before this test or included in preconditions)
+	    // e.g., click a button to open the modal if needed
+	    // reviewButton.click(); // ← Add if modal is not already open
+
+		    // Step 2: Verify review modal and set rating
+		    landingpage.verifyReviewModalAndSetRating(modalTitle, modalDescription, rating);
+	
+		    // Step 3: Verify the success screen and close it
+		    landingpage.verifyAndCloseReviewSubmitted(submittedTitle, submittedDescription);
+		}
 }
