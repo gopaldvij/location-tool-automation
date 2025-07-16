@@ -559,10 +559,12 @@ public class RegisterTest extends BaseTest {
 		softAssert.assertAll();
 	}
 	
-<<<<<<< HEAD
+
 	//Reveiw Test
+	
+	
 	@Test(description = "Verify that review modal opens, rating can be selected, and submission confirmation appears correctly.")
-	public void TR_54_verifyReviewFlow() throws InterruptedException {
+	public void TR_54_verifyReviewFlowww() throws InterruptedException {
 		    SoftAssert softAssert = new SoftAssert();
 			landingpage.enterMobileNumber("+91 1234567890");
 			landingpage.waitForWebElementToAppear(landingpage.emailFieldRegister);
@@ -597,7 +599,4 @@ public class RegisterTest extends BaseTest {
 		    // Step 3: Verify the success screen and close it
 		    landingpage.verifyAndCloseReviewSubmitted(submittedTitle, submittedDescription);
 		}
-=======
-	
->>>>>>> 9796fad3ee3d2f0a59d617a82705fc60559a8b3f
 }

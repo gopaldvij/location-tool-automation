@@ -343,11 +343,8 @@ public class LandingPage extends AbstractComponent {
 	@FindBy(css = "div.review_modal_rating p")
 	public WebElement reviewModalRatingText;
 	
-<<<<<<< HEAD
+
 	@FindBy(xpath = "//div[@class='review_modal_rating']/ul/li")
-=======
-	@FindBy(xapth = "//div[@class='review_modal_rating']/ul/li")
->>>>>>> 9796fad3ee3d2f0a59d617a82705fc60559a8b3f
 	public List<WebElement> reviewModalRatingStar;
 	
 	@FindBy(css = "div.review_submitted_icon")
@@ -503,5 +500,4 @@ public class LandingPage extends AbstractComponent {
 	    // Optionally wait for the modal to disappear
 	    wait.until(ExpectedConditions.invisibilityOf(reviewSubmittedBtn));
 	}
-
 }
